@@ -1,0 +1,147 @@
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'com.android.application'
+    id "org.jetbrains.kotlin.android" version "1.8.0"
+    id "org.jetbrains.kotlin.kapt" version "1.8.0"
+}
+
+android {
+    namespace 'com.tencent.tcmpp.demo'
+//    namespace 'com.tencent.tmf.miniapp.demo'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.tencent.tcmpp.demo"
+//        applicationId "com.tencent.tmf.miniapp.demo"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        packagingOptions {
+            pickFirst 'lib/arm64-v8a/libc++_shared.so'
+            pickFirst 'lib/armeabi/libc++_shared.so'
+            pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+            pickFirst 'lib/arm64-v8a/libmarsxlog.so'
+            pickFirst 'lib/armeabi/libmarsxlog.so'
+            pickFirst 'lib/armeabi-v7a/libmarsxlog.so'
+            pickFirst 'lib/arm64-v8a/libv8jni.so'
+        }
+
+        ndk { abiFilters "arm64-v8a" }
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'jason'
+            keyPassword '1234abcd'
+            storeFile file('tcmpp.jks')
+            storePassword '1234abcd'
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.assemble.doLast {
+            StringBuilder builder = new StringBuilder()
+            builder.append("${project.rootProject.projectDir}")
+                    .append(File.separator)
+                    .append("build-app-output")
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                println "outputFile=${outputFile.name}"
+                if (outputFile?.name?.endsWith('.apk')) {
+                    File file = new File(builder.toString())
+                    if (!file.exists()) {
+                        file.mkdirs()
+                    }
+                    copy {
+                        from outputFile
+                        into builder.toString()
+                        rename {
+                            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                            "tcmpp-android-demo-${df.format(new Date())}.apk".toString()
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+//    implementation "com.google.android.material:material:1.10.0-alpha01"
+    implementation 'androidx.core:core-ktx:1.10.0'
+
+    implementation("com.github.bumptech.glide:glide:4.11.0") {
+        exclude group: "com.android.support"
+    }
+
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    //gosn
+    implementation 'com.google.code.gson:gson:2.8.6'
+    // ok-http
+    implementation "com.squareup.okhttp3:okhttp:3.12.13"
+
+    //x5动态内核
+    //implementation 'com.tencent.tbs.tbssdk:sdk:44286'
+    //x5静态内核
+    implementation 'com.tencent.tmf.android:tbscore:20230227_102520_20230227_102520'
+
+    // mini app start
+    kapt 'com.tencent.tcmpp.android:mini_annotation_processor:1.5.0-SNAPSHOT'
+    implementation 'com.tencent.tcmpp.android:mini_core:1.5.0.6-SNAPSHOT'
+
+    // qrcode support
+    implementation 'com.tencent.tcmpp.android:mini_extra_qrcode:1.5.0-SNAPSHOT'
+
+    //tencent map  support
+    implementation 'com.tencent.tcmpp.android:mini_extra_map:1.5.0-SNAPSHOT'
+
+    //google map  support
+    implementation 'com.tencent.tcmpp.android:mini_extra_google_map:1.5.0-SNAPSHOT'
+
+    //huawei map support
+    implementation 'com.tencent.tcmpp.android:mini_extra_huawei_map:1.5.0-SNAPSHOT'
+    implementation 'com.huawei.hms:maps:6.9.0.300'
+    implementation 'com.huawei.hms:maps-basic:6.9.0.300'
+    implementation 'com.huawei.hms:site:6.5.1.300'
+
+    //live support
+    implementation 'com.tencent.tcmpp.android:mini_extra_trtc_live:1.5.0-SNAPSHOT'
+
+    //v8 engine
+//    implementation 'com.tencent.tmf.android:mini_extra_v8:1.4.0-SNAPSHOT'
+}

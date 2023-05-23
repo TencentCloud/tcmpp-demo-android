@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+            android:name="com.tencent.tcmpp.demo.TCMPPDemoApplication"
+            android:extractNativeLibs="true"
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.TCMPPDemo"
+            tools:replace="android:icon"
+            tools:remove="android:requestLegacyExternalStorage"
+            tools:targetApi="31">
+        <meta-data
+                android:name="TencentMapSDK"
+                android:value="QAZBZ-2HCKW-SWAR4-ORKF2-JDHL3-IAFBO" />
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="(YOUR_API_KEY)" />
+
+        <meta-data
+                android:name="HuaweiApiKey"
+                android:value="(YOUR_API_KEY)" />
+
+        <activity
+                android:name="com.tencent.tcmpp.demo.MainActivity"
+                android:screenOrientation="portrait"
+                android:exported="true" />
+
+        <activity android:name="com.tencent.tcmpp.demo.SettingActivity"
+                android:screenOrientation="portrait"
+                android:exported="true"/>
+
+        <activity
+                android:name="com.tencent.tcmpp.demo.WelcomeActivity"
+                android:screenOrientation="portrait"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

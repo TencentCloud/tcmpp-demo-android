@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">小程序助手</string>
+    <string name="main_title_example_apps">小程序体验Demo</string>
+    <string name="main_btn_scan">扫描小程序二维码</string>
+    <string name="main_title_recent_apps">最近使用</string>
+    <string name="applet_debug_info">调试信息</string>
+
+    <string name="applet_mini_data_country">中国</string>
+    <string name="applet_mini_proxy_province">北京市</string>
+    <string name="applet_mini_proxy_city">北京市</string>
+
+    <string name="common_lib_tips">欢迎体验TCMPP</string>
+    <string name="applet_main_act_delete_msg_confirm">确定</string>
+    <string name="applet_main_act_delete_msg_cancal">取消</string>
+    <string name="applet_main_privacy_auth">隐私授权</string>
+    <string name="applet_main_privacy_auth_content">是否同意xxx授权</string>
+
+    <string name="version_dev">开发版</string>
+    <string name="version_pre">预览版</string>
+    <string name="version_exp">体验版</string>
+    <string name="mini_app_recent_list_empty">暂无最近使用小程序</string>
+    <string name="mini_app_scan_tip">请扫描小程序二维码进行体验</string>
+</resources>

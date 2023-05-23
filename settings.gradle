@@ -1,0 +1,52 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven {
+            url 'https://t.pinpad.qq.com/fHKFBbEjd/repository/maven-public/'
+            //本地maven不能添加如下验证，否则会包错误：Authentication scheme 'basic'(BasicAuthentication) is not supported by protocol 'file
+            //主要是因为上面的url采用变量的形式
+            credentials {
+                username "tmf_read"
+                password "psnBSt@BVMva6#&^"
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+        maven {
+            url 'https://tmf-work-maven.pkg.coding.net/repository/tmf/android/'
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+        maven {
+            url 'https://t.pinpad.qq.com/fHKFBbEjd/repository/maven-public/'
+            //本地maven不能添加如下验证，否则会包错误：Authentication scheme 'basic'(BasicAuthentication) is not supported by protocol 'file
+            //主要是因为上面的url采用变量的形式
+            credentials {
+                username "tmf_read"
+                password "psnBSt@BVMva6#&^"
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+        maven {
+            url 'https://tmf-work-maven.pkg.coding.net/repository/tmf/android/'
+        }
+        flatDir{
+            dirs 'libs'
+        }
+    }
+}
+rootProject.name = "TCMPP-Demo"
+include ':app'

@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="MyAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert" />
+
+    <declare-styleable name="RoundImageView">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+</resources>

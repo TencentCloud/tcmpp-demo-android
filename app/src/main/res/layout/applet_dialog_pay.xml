@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+    <ImageView
+            android:id="@+id/close"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="10dp"
+            android:src="@mipmap/applet_ic_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <TextView
+            android:id="@+id/title"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:text="请输入支付密码"
+            android:textStyle="bold"
+            android:textColor="@color/gray_font_dark"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <LinearLayout
+            android:id="@+id/llNumber"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <TextView
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="¥"
+                android:layout_marginEnd="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray_font_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        <TextView
+                android:id="@+id/tvCount"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:text="16.9"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llVendor"
+            app:layout_constraintTop_toBottomOf="@+id/llNumber"
+            app:layout_constraintStart_toStartOf="@+id/pwd"
+            app:layout_constraintEnd_toEndOf="@+id/pwd"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+        <TextView
+                android:layout_marginStart="5dp"
+                android:text="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.tencent.tcmpp.demo.pay.PwdEditText
+            android:id="@+id/pwd"
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:cursorVisible="false"
+            android:inputType="numberPassword"
+            android:focusable="true"
+            android:maxLength="6"
+            android:focusableInTouchMode="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llVendor" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@+id/pwd"
+            app:layout_constraintStart_toStartOf="@+id/pwd"
+            app:layout_constraintEnd_toEndOf="@+id/pwd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="5dp"
+                android:text="默认密码：666666"
+                android:textColor="@color/mini_sdk_dialog_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tvForgetPwd"
+                android:text="忘记密码"
+                android:layout_gravity="end"
+                android:textColor="@color/mini_sdk_dialog_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

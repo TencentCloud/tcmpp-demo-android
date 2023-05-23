@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Applet assistant</string>
+    <string name="main_title_example_apps">Example mini apps</string>
+    <string name="main_btn_scan">Scan</string>
+    <string name="main_title_recent_apps">Recent used</string>
+    <string name="applet_debug_info">debug information</string>
+
+    <string name="applet_mini_data_country">China</string>
+    <string name="applet_mini_proxy_province">Beijing</string>
+    <string name="applet_mini_proxy_city">Beijing</string>
+
+
+    <string name="common_lib_tips">Welcome to TCMPP</string>
+    <string name="applet_main_act_delete_msg_confirm">confirm</string>
+    <string name="applet_main_act_delete_msg_cancal">cancel</string>
+    <string name="applet_main_privacy_auth">Privacy authorization</string>
+    <string name="applet_main_privacy_auth_content">Do you agree to xxx authorization</string>
+    <string name="version_dev">Develop</string>
+    <string name="version_pre">Preview</string>
+    <string name="version_exp">Experience</string>
+    <string name="mini_app_recent_list_empty">No recently used applet</string>
+    <string name="mini_app_scan_tip">Please scan the mini program QR code to experience</string>
+</resources>

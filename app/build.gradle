@@ -119,29 +119,38 @@ dependencies {
     //implementation 'com.tencent.tbs.tbssdk:sdk:44286'
     //x5静态内核
     implementation 'com.tencent.tmf.android:tbscore:20230227_102520_20230227_102520'
+    implementation 'com.tencent.tcmpp.android:mini_extra_static_x5:1.5.0.0'
 
     // mini app start
-    kapt 'com.tencent.tcmpp.android:mini_annotation_processor:1.5.0-SNAPSHOT'
-    implementation 'com.tencent.tcmpp.android:mini_core:1.5.0.6-SNAPSHOT'
+    kapt 'com.tencent.tcmpp.android:mini_annotation_processor:1.5.0.0'
+    implementation 'com.tencent.tcmpp.android:mini_core:1.5.0.8'
 
     // qrcode support
-    implementation 'com.tencent.tcmpp.android:mini_extra_qrcode:1.5.0-SNAPSHOT'
+    implementation 'com.tencent.tcmpp.android:mini_extra_qrcode:1.5.0.0'
 
     //tencent map  support
-    implementation 'com.tencent.tcmpp.android:mini_extra_map:1.5.0-SNAPSHOT'
+    implementation 'com.tencent.tcmpp.android:mini_extra_map:1.5.0.0'
+    // map sdk
+    // 应对隐私问题
+    // 地图库
+    implementation 'com.tencent.map:tencent-map-vector-sdk:4.5.10'
+    // 地图组件库，包括小车平移、点聚合等组件功能，详见开发指南。
+    implementation 'com.tencent.map:sdk-utilities:1.0.7'
+    // 定位组件
+    implementation 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.4.7'
 
     //google map  support
-    implementation 'com.tencent.tcmpp.android:mini_extra_google_map:1.5.0-SNAPSHOT'
+    implementation 'com.tencent.tcmpp.android:mini_extra_google_map:1.5.0.0'
 
     //huawei map support
-    implementation 'com.tencent.tcmpp.android:mini_extra_huawei_map:1.5.0-SNAPSHOT'
+    implementation 'com.tencent.tcmpp.android:mini_extra_huawei_map:1.5.0.0'
     implementation 'com.huawei.hms:maps:6.9.0.300'
     implementation 'com.huawei.hms:maps-basic:6.9.0.300'
     implementation 'com.huawei.hms:site:6.5.1.300'
 
     //live support
-    implementation 'com.tencent.tcmpp.android:mini_extra_trtc_live:1.5.0-SNAPSHOT'
+    implementation 'com.tencent.tcmpp.android:mini_extra_trtc_live:1.5.0.0'
 
     //v8 engine
-//    implementation 'com.tencent.tmf.android:mini_extra_v8:1.4.0-SNAPSHOT'
+//    implementation 'com.tencent.tmf.android:mini_extra_v8:1.5.0.0'
 }

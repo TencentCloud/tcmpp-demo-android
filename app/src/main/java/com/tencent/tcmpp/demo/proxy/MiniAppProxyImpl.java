@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import com.tencent.tcmpp.demo.BuildConfig;
 import com.tencent.tcmpp.demo.Constants;
 import com.tencent.tcmpp.demo.utils.UniversalDrawable;
+import com.tencent.tmf.mini.api.bean.MiniConfigData;
 import com.tencent.tmfmini.sdk.annotation.ProxyService;
 import com.tencent.tmfmini.sdk.launcher.core.IMiniAppContext;
 import com.tencent.tmfmini.sdk.launcher.core.proxy.AsyncResult;
@@ -64,11 +65,6 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
     }
 
     @Override
-    public Drawable getDrawable(Context context, String s, int i, int i1, Drawable drawable, boolean b) {
-        return getDrawable(context, s, i, i1, drawable);
-    }
-
-    @Override
     public boolean openChoosePhotoActivity(Context context, int i, IChoosePhotoListner iChoosePhotoListner) {
         return false;
     }
@@ -99,13 +95,17 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
     }
 
     @Override
-    public String getLiveComponentLicenseUrl() {
-        return "你的LicenseUrl";
-    }
+    public MiniConfigData configData(Context context) {
+        //Live直播配置
+        MiniConfigData.LiveConfig liveConfig = new MiniConfigData.LiveConfig();
+        //下面的key和url仅可用于demo
+        liveConfig.licenseKey = "开发者申请的licenseKey";
+        liveConfig.licenseUrl = "开发者申请的licenseUrl";
 
-    @Override
-    public String getLiveComponentLicenseKey() {
-        return "你的LicenseKey";
+        return new MiniConfigData
+                .Builder()
+                .liveConfig(liveConfig)
+                .build();
     }
 
     @Override

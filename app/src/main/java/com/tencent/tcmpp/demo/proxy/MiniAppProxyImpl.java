@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
+
 import com.tencent.tcmpp.demo.BuildConfig;
 import com.tencent.tcmpp.demo.Constants;
 import com.tencent.tcmpp.demo.utils.UniversalDrawable;
@@ -15,10 +16,12 @@ import com.tencent.tmfmini.sdk.launcher.core.proxy.BaseMiniAppProxyImpl;
 import com.tencent.tmfmini.sdk.launcher.core.proxy.MiniAppProxy;
 import com.tencent.tmfmini.sdk.launcher.ui.OnMoreItemSelectedListener;
 import com.tencent.tmfmini.sdk.ui.DefaultMoreItemSelectedListener;
-import java.util.List;
-import java.util.Map;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
+import java.util.Map;
 
 @ProxyService(proxy = MiniAppProxy.class)
 public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
@@ -95,16 +98,57 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
     }
 
     @Override
-    public MiniConfigData configData(Context context) {
-        //Live直播配置
-        MiniConfigData.LiveConfig liveConfig = new MiniConfigData.LiveConfig();
-        //下面的key和url仅可用于demo
-        liveConfig.licenseKey = "开发者申请的licenseKey";
-        liveConfig.licenseUrl = "开发者申请的licenseUrl";
+    public MiniConfigData configData(Context context, int configType, JSONObject params) {
+        if(configType == MiniConfigData.TYPE_CUSTOM_JSAPI) {
+            //自定义JsApi配置
+            MiniConfigData.CustomJsApiConfig customJsApiConfig = new MiniConfigData.CustomJsApiConfig();
+            customJsApiConfig.jsApiConfigPath = "tcmpp/custom-config.json";
+
+            return new MiniConfigData
+                    .Builder()
+                    .customJsApiConfig(customJsApiConfig)
+                    .build();
+        }
+
+        if(configType == MiniConfigData.TYPE_LIVE) {
+            //Live直播配置
+            MiniConfigData.LiveConfig liveConfig = new MiniConfigData.LiveConfig();
+            //下面的key和url仅可用于demo
+            liveConfig.licenseKey = "6ae463dfe484853eef22052ca122623b";
+            liveConfig.licenseUrl = "https://license.vod2.myqcloud.com/license/v2/1314481471_1/v_cube.license";
+
+            return new MiniConfigData
+                    .Builder()
+                    .liveConfig(liveConfig)
+                    .build();
+        }
+
+//        if(configType == MiniConfigData.TYPE_DOMAIN) {
+//            //虚拟域名配置
+//            MiniConfigData.DomainConfig domainConfig = new MiniConfigData.DomainConfig();
+//            domainConfig.domain = "test.com";
+//
+//            return new MiniConfigData
+//                    .Builder()
+//                    .domainConfig(domainConfig)
+//                    .build();
+//        }
+
+        if(configType == MiniConfigData.TYPE_WEBVIEW) {
+            //webView userAgent
+            String ua = params.optString(MiniConfigData.WebViewConfig.WEBVIEW_CONFIG_UA);
+            //设置新的userAgent
+            MiniConfigData.WebViewConfig webViewConfig = new MiniConfigData.WebViewConfig();
+            webViewConfig.userAgent = "xxxxxxxxxxxx";
+
+            return new MiniConfigData
+                    .Builder()
+                    .webViewConfig(webViewConfig)
+                    .build();
+        }
 
         return new MiniConfigData
                 .Builder()
-                .liveConfig(liveConfig)
                 .build();
     }
 

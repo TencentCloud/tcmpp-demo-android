@@ -25,15 +25,6 @@ public class TCMPPDemoApplication extends Application {
     private void initTCMPP(){
         boolean privacyAuth = CommonSp.getInstance().isPrivacyAuth(this);
 
-        MiniInitConfig.Builder builder = new MiniInitConfig.Builder();
-        MiniInitConfig config = builder
-                .configAssetName("tcmpp-android-configurations.json")
-                .debug(true)  // optional
-                .privacyAuth(privacyAuth) // optional
-                .verifyPkg(false) //optional：是否校验配置文件包名，默认校验
-                .build();
-        TmfMiniSDK.init(this, config);
-
         Constants.COUNTRY = getResources().getString(R.string.applet_mini_data_country);
         Constants.CITY = getResources().getString(R.string.applet_mini_proxy_city);
         Constants.PROVINCE = getResources().getString(R.string.applet_mini_proxy_province);
@@ -41,7 +32,6 @@ public class TCMPPDemoApplication extends Application {
         if (privacyAuth) {
             //只有隐私授权后才能调用TmfMiniSDK相关API
             TmfMiniSDK.setLocation(Constants.COUNTRY, Constants.PROVINCE, Constants.CITY);
-            TmfMiniSDK.preloadMiniApp(this, null);
         }
     }
 }

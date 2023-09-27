@@ -115,15 +115,14 @@ dependencies {
     // ok-http
     implementation "com.squareup.okhttp3:okhttp:3.12.13"
 
-    //x5动态内核
-    //implementation 'com.tencent.tbs.tbssdk:sdk:44286'
+
     //x5静态内核
     implementation 'com.tencent.tmf.android:tbscore:20230412_185455_20230412_185455'
     implementation 'com.tencent.tcmpp.android:mini_extra_static_x5:1.5.0.0'
 
     // mini app start
-    kapt 'com.tencent.tcmpp.android:mini_annotation_processor:1.5.1'
-    implementation 'com.tencent.tcmpp.android:mini_core:1.5.4'
+    kapt 'com.tencent.tcmpp.android:mini_annotation_processor:1.5.2'
+    implementation 'com.tencent.tcmpp.android:mini_core:1.5.5'
 
     // qrcode support
     implementation 'com.tencent.tcmpp.android:mini_extra_qrcode:1.5.0.0'

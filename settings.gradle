@@ -40,6 +40,7 @@ dependencyResolutionManagement {
                 basic(BasicAuthentication)
             }
         }
+        maven { url "https://jitpack.io" }
         maven {
             url 'https://tmf-work-maven.pkg.coding.net/repository/tmf/android/'
         }

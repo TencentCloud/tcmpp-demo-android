@@ -7,35 +7,35 @@
         android:orientation="vertical"
         android:background="@color/c_f2f2f2">
 
-    <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:fitsSystemWindows="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
 
-        <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/applet_ic_back"
+            android:visibility="gone" />
 
-            <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@mipmap/applet_ic_back"
-                    android:layout_centerVertical="true"
-                    android:visibility="gone" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/applet_debug_info"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@string/applet_debug_info"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-        </RelativeLayout>
-    </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:id="@+id/config_server_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/applet_config_server"
+            android:textColor="@color/applet_c_828282" />
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView1"

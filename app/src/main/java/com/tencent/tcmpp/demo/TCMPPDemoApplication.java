@@ -3,6 +3,7 @@ package com.tencent.tcmpp.demo;
 import android.app.Application;
 import android.content.Context;
 import com.tencent.tcmpp.demo.sp.impl.CommonSp;
+import com.tencent.tcmpp.demo.utils.GlideUtil;
 import com.tencent.tmf.mini.api.TmfMiniSDK;
 import com.tencent.tmf.mini.api.bean.MiniInitConfig;
 
@@ -33,5 +34,7 @@ public class TCMPPDemoApplication extends Application {
             //只有隐私授权后才能调用TmfMiniSDK相关API
             TmfMiniSDK.setLocation(Constants.COUNTRY, Constants.PROVINCE, Constants.CITY);
         }
+
+        GlideUtil.init(this);
     }
 }

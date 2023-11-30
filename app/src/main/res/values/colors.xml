@@ -3,4 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="c_f2f2f2">#f2f2f2</color>
+
+    <color name="applet_color_primary">#00A8E1</color>
+    <color name="applet_color_primary_dark">#00A8E1</color>
+    <color name="applet_color_accent">#D81B60</color>
+    <color name="c_7f000000">#7f000000</color>
+    <color name="c_7f646464">#7f646464</color>
+    <color name="c_575757">#575757</color>
+    <color name="c_4f4f4f">#4f4f4f</color>
+    <color name="applet_c_828282">#828282</color>
 </resources>

@@ -1,9 +1,9 @@
-package com.tencent.tcmpp.demo;
+package com.tencent.tcmpp.demo.debug;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.tencent.tcmpp.demo.pay.CustomPayDemo;
-import com.tencent.tcmpp.demo.pay.ICustomPayCallback;
+
+import com.tencent.tcmpp.demo.Constants;
+import com.tencent.tcmpp.demo.R;
 import com.tencent.tcmpp.demo.sp.impl.CommonSp;
 import com.tencent.tcmpp.demo.ui.SpaceItemDecoration;
 import com.tencent.tmf.mini.api.TmfMiniSDK;
@@ -69,6 +70,10 @@ public class SettingActivity extends AppCompatActivity {
 //        serverConfigEntities.add(new DebugEntity("小程序测试", "点击进入小程序测试页面", DebugEntity.TYPE_2));
         serverConfigEntities.add(new SettingEntity("CheckPermission", "CheckPermission", SettingEntity.TYPE_2));
         mAdapter.setDebugEntityList(serverConfigEntities);
+
+        findViewById(R.id.config_server_text).setOnClickListener(v ->
+                startActivity(
+                        new Intent(SettingActivity.this, ServerConfigListActivity.class)));
     }
 
     private void checkPermission() {

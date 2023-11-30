@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/white">
+
+    <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1.0">
+
+        <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/applet_tmf_public_cloud"
+                android:textSize="16sp"/>
+
+        <TextView
+                android:id="@+id/tcp_host_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="http://www.tmf.qq.com"
+                android:layout_marginTop="10dp" />
+
+        <TextView
+                android:id="@+id/http_url_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="http://www.tmf.qq.com"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"/>
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/select_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/applet_ic_done"
+            android:layout_weight="0"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"/>
+</LinearLayout>

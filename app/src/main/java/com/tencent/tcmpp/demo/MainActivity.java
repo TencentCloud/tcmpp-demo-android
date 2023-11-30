@@ -9,12 +9,8 @@ import android.os.Handler;
 import android.os.ResultReceiver;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.tencent.tcmpp.demo.debug.SettingActivity;
 import com.tencent.tcmpp.demo.utils.FileUtil;
 import com.tencent.tmf.mini.api.TmfMiniSDK;
 import com.tencent.tmf.mini.api.bean.MiniApp;
@@ -93,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.title).setOnClickListener(
                 v -> startActivity(new Intent(MainActivity.this, SettingActivity.class)));
+
+        findViewById(R.id.search).setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, SearchActivity.class));
+        });
 
         checkPermission();
     }

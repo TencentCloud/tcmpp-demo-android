@@ -6,6 +6,10 @@ import java.util.Date;
 
 public class Constants {
 
+    public static final String LOG_TAG = "TCMPPDemo";
+
+    public static final String TCMPP_CONFIG_FILE = "tcmpp-android-configurations.json";
+
     public static final String IMEI = "test002";
 
     public static  String COUNTRY = "";

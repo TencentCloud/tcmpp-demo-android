@@ -29,16 +29,33 @@
 
         <activity
                 android:name="com.tencent.tcmpp.demo.MainActivity"
-                android:screenOrientation="portrait"
-                android:exported="true" />
+                android:screenOrientation="fullSensor"
+                android:exported="false" />
 
-        <activity android:name="com.tencent.tcmpp.demo.SettingActivity"
-                android:screenOrientation="portrait"
-                android:exported="true"/>
+        <activity android:name="com.tencent.tcmpp.demo.debug.SettingActivity"
+                android:screenOrientation="fullSensor"
+                android:exported="false" />
+
+        <activity android:name="com.tencent.tcmpp.demo.debug.ServerConfigListActivity"
+            android:screenOrientation="fullSensor"
+            android:exported="false"/>
+
+        <activity android:name="com.tencent.tcmpp.demo.debug.AddServerConfigActivity"
+            android:screenOrientation="fullSensor"
+            android:exported="false"/>
+
+        <activity android:name="com.tencent.tcmpp.demo.TransActivity"
+            android:screenOrientation="fullSensor"
+            android:exported="false"/>
+
+        <activity android:name="com.tencent.tcmpp.demo.SearchActivity"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="stateVisible"
+            android:exported="false"/>
 
         <activity
                 android:name="com.tencent.tcmpp.demo.WelcomeActivity"
-                android:screenOrientation="portrait"
+                android:screenOrientation="fullSensor"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

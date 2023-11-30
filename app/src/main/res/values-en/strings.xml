@@ -20,4 +20,36 @@
     <string name="version_exp">Experience</string>
     <string name="mini_app_recent_list_empty">No recently used applet</string>
     <string name="mini_app_scan_tip">Please scan the mini program QR code to experience</string>
+
+    <string name="applet_config_server">config server</string>
+    <string name="applet_add_server">Add server</string>
+    <string name="applet_server_name">Server name</string>
+    <string name="applet_server_config">Input server config</string>
+    <string name="applet_server_save_config">Save config</string>
+
+    <string name="applet_content_can_not_be_empty">the content can not be blank</string>
+    <string name="applet_server_name_must_be">server name requires 2~10 character</string>
+    <string name="applet_config_already_exists">config file exist: %s</string>
+    <string name="applet_config_must_be_json">content must be JSON </string>
+
+    <string name="applet_tmf_public_cloud">TCMPP</string>
+    <string name="applet_choose_below_or_select_rightr">Please select from the list below or add in the upper right corner</string>
+
+    <string name="applet_inner_app_config">APP built-in configuration</string>
+    <string name="applet_save_success">Successfully saved</string>
+
+    <string name="applet_restart_to_take_effective">Need to restart the APP to take effect</string>
+    <string name="applet_restart_to_take_effective_delete">delete</string>
+    <string name="applet_restart_to_take_effective_delete_config">Whether to delete the configuration file</string>
+
+    <string name="applet_tmf_confirm">confirm</string>
+    <string name="applet_tmf_cancel">cancel</string>
+    <string name="applet_develop_version">develop version</string>
+
+    <string name="applet_search_result">search results</string>
+    <string name="applet_search">search</string>
+    <string name="applet_search_hint">search</string>
+    <string name="applet_cancel">cancel</string>
+    <string name="applet_input_to_search">Enter content search applet</string>
+    <string name="applet_search_no_ava_mini">No available applet found</string>
 </resources>

@@ -158,21 +158,23 @@ dependencies {
     //nfc support
     implementation 'com.tencent.tcmpp.android:mini_extra_nfc:1.5.2'
     //lbs support
-    implementation 'com.tencent.tcmpp.android:mini_extra_lbs:1.5.1.0'
+    implementation 'com.tencent.tcmpp.android:mini_extra_lbs:1.5.2'
     //bluetooth support
     implementation 'com.tencent.tcmpp.android:mini_extra_bluetooth:1.5.2'
     //contact support
-    implementation 'com.tencent.tcmpp.android:mini_extra_contact:1.5.1.0'
+    implementation 'com.tencent.tcmpp.android:mini_extra_contact:1.5.2'
     //Biometric support
-    implementation 'com.tencent.tcmpp.android:mini_extra_soter:1.5.1.0'
+    implementation 'com.tencent.tcmpp.android:mini_extra_soter:1.5.2'
     //clipboard support
-    implementation 'com.tencent.tcmpp.android:mini_extra_clipboard:1.5.1.0'
+    implementation 'com.tencent.tcmpp.android:mini_extra_clipboard:1.5.2'
     //calendar support
-    implementation 'com.tencent.tcmpp.android:mini_extra_calendar:1.5.1.0'
+    implementation 'com.tencent.tcmpp.android:mini_extra_calendar:1.5.2'
     //network support (tcp/udp/mdns)
     implementation 'com.tencent.tcmpp.android:mini_extra_network:1.5.0'
     //wifi support
-    implementation 'com.tencent.tcmpp.android:mini_extra_wifi:1.5.1.0'
+    implementation 'com.tencent.tcmpp.android:mini_extra_wifi:1.5.2'
+    // media support
+    implementation 'com.tencent.tcmpp.android:mini_extra_media_support:1.5.2'
 
     //v8 engine
     implementation 'com.tencent.tcmpp.android:mini_extra_v8:1.5.1'

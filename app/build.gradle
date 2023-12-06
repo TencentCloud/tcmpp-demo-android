@@ -128,7 +128,7 @@ dependencies {
 
     // mini app start
     kapt 'com.tencent.tcmpp.android:mini_annotation_processor:1.5.2'
-    implementation 'com.tencent.tcmpp.android:mini_core:1.5.8'
+    implementation 'com.tencent.tcmpp.android:mini_core:1.5.9'
 
     // qrcode support
     implementation 'com.tencent.tcmpp.android:mini_extra_qrcode:1.5.0.0'
@@ -173,7 +173,7 @@ dependencies {
     implementation 'com.tencent.tcmpp.android:mini_extra_network:1.5.0'
     //wifi support
     implementation 'com.tencent.tcmpp.android:mini_extra_wifi:1.5.2'
-    // media support
+    //media support
     implementation 'com.tencent.tcmpp.android:mini_extra_media_support:1.5.2'
 
     //v8 engine

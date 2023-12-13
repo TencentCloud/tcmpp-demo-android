@@ -41,8 +41,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void agreePrivacyAuth(Context context) {
         CommonSp.getInstance().putPrivacyAuth(context, true);
-        // 同意隐私授权
-        TmfMiniSDK.agreePrivacyAuth();
+        // 注意：调用任何TmfMiniSDK对外接口，都会触发小程序容器的初始化
+        // 因此如果涉及隐私政策，请确保在同意之后再调用TmfMiniSDK相关接口
         TmfMiniSDK.setLocation(Constants.COUNTRY, Constants.PROVINCE, Constants.CITY);
         TmfMiniSDK.preloadMiniApp(context, null);
     }

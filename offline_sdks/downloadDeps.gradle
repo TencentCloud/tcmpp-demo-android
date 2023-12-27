@@ -1,0 +1,71 @@
+apply from: '../deps.gradle'
+configurations {
+    tcmppDeps
+    mapDeps
+}
+dependencies {
+    tcmppDeps (project.ext.TCMPPDeps['mini_core']) {
+//        exclude(group: "androidx.swiperefreshlayout")
+        exclude(group: "androidx.webkit")
+        exclude(group: "androidx.annotation")
+        exclude(group: "androidx.interpolator")
+        exclude(group: "androidx.core")
+        exclude(group: "org.jetbrains.kotlin")
+    }
+
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_dynamic_x5'])
+    tcmppDeps(project.ext.TCMPPDeps['dynamicx5'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_qrcode']) {
+        exclude(group: "androidx.appcompat")
+    }
+
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_map'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_lbs'])
+    mapDeps(project.ext.TencentMapDeps['tencent-map-vector-sdk'])
+    mapDeps(project.ext.TencentMapDeps['sdk-utilities'])
+    mapDeps(project.ext.TencentMapDeps['TencentLocationSdk-openplatform'])
+
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_google_map'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_huawei_map'])
+//    tcmppDeps(project.ext.TCMPPDeps['mini_extra_trtc_live'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_nfc'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_bluetooth'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_contact'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_soter'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_clipboard'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_calendar'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_wifi'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_media_support'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_v8'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_network']) {
+        exclude(group: "org.jetbrains.kotlin")
+    }
+
+//    //calendar support
+//    implementation project.ext.TCMPPDeps['mini_extra_calendar']
+//    //network support (tcp/udp/mdns)
+//    implementation project.ext.TCMPPDeps['mini_extra_network']
+//    //wifi support
+//    implementation project.ext.TCMPPDeps['mini_extra_wifi']
+//    //media support
+//    implementation project.ext.TCMPPDeps['mini_extra_media_support']
+//
+//    //v8 engine
+//    implementation project.ext.TCMPPDeps['mini_extra_v8']
+}
+
+task downloadTcmppDeps(type: Copy) {
+    from configurations.tcmppDeps
+    into "${project.rootDir}/offline_sdks/tcmpp-mini-core"
+}
+
+task downloadMapDeps(type: Copy) {
+    from configurations.mapDeps
+    into "${project.rootDir}/offline_sdks/tcmpp-tencent-map"
+}
+
+task tcmppLocalRepo(type: Exec) {
+    commandLine 'python3', "${project.rootDir}/offline_sdks/tcmppLocalRepo.py"
+}
+
+downloadTcmppDeps.dependsOn(downloadMapDeps, tcmppLocalRepo)

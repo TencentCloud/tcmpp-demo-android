@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         miniAppRecyclerViewAdapter = new MiniAppRecyclerViewAdapter();
         mRvMiniAppListView.setLayoutManager(layoutManager);
         mRvMiniAppListView.setAdapter(miniAppRecyclerViewAdapter);
-        refreshData();
 
         findViewById(R.id.btn_scan).setOnClickListener(v -> TmfMiniSDK.scan(MainActivity.this));
 
@@ -96,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         checkPermission();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshData();
     }
 
     private void refreshData() {

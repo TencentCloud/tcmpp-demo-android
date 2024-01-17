@@ -17,5 +17,5 @@ ext {
         localProperties.store(rootProject.file('local.properties').newDataOutputStream(), null)
     }
 
-    useOfflineSdks = localProperties.get("tcmpp.useOfflineSdks", false)
+    useOfflineSdks = localProperties.get("tcmpp.useOfflineSdks", false) == "true"
 }

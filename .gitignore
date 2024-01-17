@@ -15,3 +15,6 @@
 local.properties
 .idea
 build-app-output
+/offline_sdks/tcmpp-local-repo
+/offline_sdks/tcmpp-mini-core
+/offline_sdks/tcmpp-tencent-map

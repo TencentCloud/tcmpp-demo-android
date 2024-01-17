@@ -11,7 +11,7 @@ import org.json.JSONObject;
 @JsPlugin(secondary = true)
 public class WxApiPlugin extends BaseJsPlugin {
 
-    @JsEvent("wx.login")
+    @JsEvent("login")
     public void login(final RequestEvent req) {
         JSONObject jsonObject = new JSONObject();
         try {
@@ -22,7 +22,7 @@ public class WxApiPlugin extends BaseJsPlugin {
         req.ok(jsonObject);
     }
 
-    @JsEvent("wx.getUserInfo")
+    @JsEvent("getUserInfo")
     public void getUserInfo(final RequestEvent req) {
         JSONObject jsonObject = new JSONObject();
         try {
@@ -39,7 +39,7 @@ public class WxApiPlugin extends BaseJsPlugin {
         req.ok(jsonObject);
     }
 
-    @JsEvent("wx.getUserProfile")
+    @JsEvent("getUserProfile")
     public void getUserProfile(final RequestEvent req) {
         JSONObject jsonObject = new JSONObject();
         try {

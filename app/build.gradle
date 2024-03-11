@@ -181,7 +181,7 @@ dependencies {
         implementation project.ext.TCMPPDeps['mini_extra_media_support']
 
         //v8 engine
-        implementation project.ext.TCMPPDeps['mini_extra_v8']
+//        implementation project.ext.TCMPPDeps['mini_extra_v8']
     }
 
     //huawei map support

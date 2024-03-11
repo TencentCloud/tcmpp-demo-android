@@ -54,7 +54,6 @@ public class FileUtil {
         return path.delete();
     }
 
-    /*写入Text文件操作*/
     public static void writeText(String filePath, String content, boolean isAppend) {
         FileOutputStream outputStream = null;
         OutputStreamWriter outputStreamWriter = null;

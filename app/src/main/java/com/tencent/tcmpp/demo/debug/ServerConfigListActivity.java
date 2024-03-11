@@ -41,12 +41,10 @@ public class ServerConfigListActivity extends AppCompatActivity implements XGCOn
     private ImageView mAddImg;
     private RecyclerView mRecyclerView;
     private ServerConfigAdapter mAdapter;
-    //当前选择的配置文件
     private File mCurrentSelectConfigFile = null;
     private String oldConfigPath = null;
 
     public void killMyself() {
-        //这里可以重启你的应用程序，我的app中有service，所以我只要杀死进程就自动重启了。
         TmfMiniSDK.stopAllMiniApp(this);
         android.os.Process.killProcess(android.os.Process.myPid());
     }
@@ -109,11 +107,6 @@ public class ServerConfigListActivity extends AppCompatActivity implements XGCOn
         mAdapter.setDatas(serverConfigEntities);
     }
 
-    /**
-     * 配置文件列表
-     *
-     * @return
-     */
     private ArrayList<ServerConfigEntity> getConfigList() {
         ArrayList<ServerConfigEntity> serverConfigEntities = new ArrayList<>();
         //如果配置文件已经不存在了则移除配置
@@ -192,14 +185,13 @@ public class ServerConfigListActivity extends AppCompatActivity implements XGCOn
             startActivity(new Intent(this, AddServerConfigActivity.class));
         } else if (id == R.id.back_img) {
             finish();
-        } else if (id == R.id.save_img) {//保存现在的配置
+        } else if (id == R.id.save_img) {
             if (mCurrentSelectConfigFile == null) {
                 CommonSp.getInstance().removeConfigFilePath();
             } else {
                 CommonSp.getInstance().putConfigFilePath(mCurrentSelectConfigFile.getAbsolutePath());
             }
 
-            //判断配置是否发生的变化
             boolean isChange = true;
             if (TextUtils.isEmpty(oldConfigPath)) {
                 if (mCurrentSelectConfigFile == null) {
@@ -214,8 +206,8 @@ public class ServerConfigListActivity extends AppCompatActivity implements XGCOn
 
             if (isChange) {
                 AlertDialog alertDialog = new AlertDialog.Builder(this)
-                        .setTitle(R.string.applet_save_success)//标题
-                        .setMessage(R.string.applet_restart_to_take_effective)//内容
+                        .setTitle(R.string.applet_save_success)
+                        .setMessage(R.string.applet_restart_to_take_effective)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -238,8 +230,8 @@ public class ServerConfigListActivity extends AppCompatActivity implements XGCOn
         }
 
         final AlertDialog alertDialog = new AlertDialog.Builder(this)
-                .setTitle(R.string.applet_restart_to_take_effective_delete)//标题
-                .setMessage(R.string.applet_restart_to_take_effective_delete_config)//内容
+                .setTitle(R.string.applet_restart_to_take_effective_delete)
+                .setMessage(R.string.applet_restart_to_take_effective_delete_config)
                 .setPositiveButton(R.string.applet_tmf_confirm, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

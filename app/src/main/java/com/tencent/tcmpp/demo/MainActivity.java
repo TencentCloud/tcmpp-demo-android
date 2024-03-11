@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onReceiveResult(int resultCode, Bundle resultData) {
             if (resultCode != MiniCode.CODE_OK) {
                 //小程序启动错误
+                //mini program startup error
                 String errMsg = resultData.getString(MiniCode.KEY_ERR_MSG);
                 Toast.makeText(MainActivity.this, errMsg + resultCode, Toast.LENGTH_SHORT).show();
             } else {
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-        decorView.setSystemUiVisibility(uiOptions); // 将decorView设置为全屏显示
+        decorView.setSystemUiVisibility(uiOptions);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
 
         mRvMiniAppListView = findViewById(R.id.recyclerView);
@@ -133,13 +134,13 @@ public class MainActivity extends AppCompatActivity {
         JSONObject scanResult = TmfMiniSDK.getScanResult(requestCode, data);
 
         if (scanResult != null) {
-            //获取内置扫码组件二维码内容
+            // 获取扫码结果
+            // Obtain the scanning result of the qrcode
             String result = scanResult.optString("result");
             if (!TextUtils.isEmpty(result)) {
-                //处理小程序二维码，非小程序二维码会返回错误
+                // 处理扫码结果
+                // Process the scan result
                 MiniStartLinkOptions options = new MiniStartLinkOptions();
-                // options.entryPath = "packageAPI/pages/api/login/login.html?key=value";//支持url传递query参数
-                // options.params = "key=test111111";//支持传递参数
                 options.resultReceiver = mResultReceiver;
                 TmfMiniSDK.startMiniAppByLink(this, result, options);
             }

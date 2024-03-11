@@ -18,13 +18,8 @@ import org.json.JSONObject;
  */
 public class CommonSp extends BaseSp {
 
-    /**
-     * SharedPreferences文件名
-     */
     public static final String FILE_NAME = "app_common";
-    /**
-     * 配置文件路径
-     */
+
     private static final String KEY_CONFIG_FILE_PATH = "config_file_path";
 
     private static final String KEY_USER_NAME = "user_name";
@@ -184,9 +179,6 @@ public class CommonSp extends BaseSp {
         return null;
     }
 
-    /**
-     * 清除整个文件数据
-     */
     public void clearAll() {
         clear(mEditor);
     }

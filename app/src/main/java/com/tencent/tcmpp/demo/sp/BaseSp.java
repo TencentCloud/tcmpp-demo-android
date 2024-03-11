@@ -5,11 +5,6 @@ import android.text.TextUtils;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * SharedPreferences基类
- *
- * @author robincxiao 2019/9/3 11:11
- */
 public class BaseSp {
 
     protected SharedPreferences mSharedPreferences;

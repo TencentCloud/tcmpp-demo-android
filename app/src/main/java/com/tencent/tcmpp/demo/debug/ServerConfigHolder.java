@@ -19,16 +19,6 @@ public class ServerConfigHolder extends XGCRecyclerViewHolder<ServerConfigEntity
     private TextView mHttpUrlText;
     private ImageView mSelectImg;
 
-
-    /**
-     * 子类必须要实现
-     *
-     * @param context
-     * @param adapter
-     * @param parent
-     * @param itemView
-     * @param viewType
-     */
     public ServerConfigHolder(Context context,
             ServerConfigAdapter adapter, ViewGroup parent, View itemView, int viewType) {
         super(context, adapter, parent, itemView, viewType);

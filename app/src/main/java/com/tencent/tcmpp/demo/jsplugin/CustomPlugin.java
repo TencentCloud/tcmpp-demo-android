@@ -24,7 +24,8 @@ public class CustomPlugin extends BaseJsPlugin {
     public void testState(final RequestEvent req) {
 
         try {
-            //回调中间状态
+            // 回调中间状态
+            // Call back the intermediate state to JS
             req.sendState(req, new JSONObject().put("progress", 1));
             req.sendState(req, new JSONObject().put("progress", 30));
             req.sendState(req, new JSONObject().put("progress", 60));
@@ -44,11 +45,15 @@ public class CustomPlugin extends BaseJsPlugin {
 
     @JsEvent("customAsyncEvent")
     public void custom(final RequestEvent req) {
-        //获取参数
-        //req.jsonParams
+        // 获取参数
+        // Get parameters
+        // req.jsonParams
+
         //异步返回数据
+        //Asynchronous return data
         //req.fail();
         //req.ok();
+
         Log.d(TAG, "custom_async_event=" + req.jsonParams);
         JSONObject jsonObject = new JSONObject();
         try {
@@ -62,10 +67,13 @@ public class CustomPlugin extends BaseJsPlugin {
 
     @JsEvent("customSyncEvent")
     public String custom1(final RequestEvent req) {
-        //获取参数
-        //req.jsonParams
+        // 获取参数
+        // Get parameters
+        // req.jsonParams
         Log.d(TAG, "custom_sync_event=" + req.jsonParams);
+
         //同步返回数据(必须返回json数据)
+        //Synchronous return data (json data must be returned)
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("key", "value");
@@ -77,14 +85,17 @@ public class CustomPlugin extends BaseJsPlugin {
 
     /**
      * 测试覆盖系统API
-     *
+     * Test for Override system API
      * @param req
      */
     @JsEvent("getAppBaseInfo")
     public void getLocation(final RequestEvent req) {
-        //获取参数
-        //req.jsonParams
+        // 获取参数
+        // Get parameters
+        // req.jsonParams
+
         //异步返回数据
+        //Asynchronous return data
         //req.fail();
         //req.ok();
         Log.d(TAG, "getAppBaseInfo=" + req.jsonParams);
@@ -98,8 +109,9 @@ public class CustomPlugin extends BaseJsPlugin {
     }
 
     /**
-     * 测试小程序调气第三方APP完成分享、支付等功能后，直接返回到小程序，而不是返回到 APP
-     *
+     * 测试小程序调用第三方APP完成分享、支付等功能，直接返回到小程序，而不是返回到 APP
+     * The mini program calls a third-party APP to complete sharing, payment and other functions,
+     * and returns directly to the mini program instead of returning to the APP.
      * @param req
      */
     @JsEvent("testStartActivityForResult")
@@ -117,6 +129,7 @@ public class CustomPlugin extends BaseJsPlugin {
         });
 
         //注意：requestCode必须>=1000000
+        //Note: requestCode must be >=1000000
         activity.startActivityForResult(new Intent(activity, TransActivity.class), 1000000);
     }
 }

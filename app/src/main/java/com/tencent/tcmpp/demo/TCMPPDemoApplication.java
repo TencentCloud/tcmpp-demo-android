@@ -31,7 +31,6 @@ public class TCMPPDemoApplication extends Application {
         Constants.PROVINCE = getResources().getString(R.string.applet_mini_proxy_province);
 
         if (privacyAuth) {
-            //只有隐私授权后才能调用TmfMiniSDK相关API
             TmfMiniSDK.setLocation(Constants.COUNTRY, Constants.PROVINCE, Constants.CITY);
         }
 

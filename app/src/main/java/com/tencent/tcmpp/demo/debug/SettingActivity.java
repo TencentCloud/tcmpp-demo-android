@@ -66,8 +66,6 @@ public class SettingActivity extends AppCompatActivity {
         serverConfigEntities
                 .add(new SettingEntity("ProductId", debugInfo.optString("ProductId"),
                         SettingEntity.TYPE_1));
-//        serverConfigEntities.add(new DebugEntity("清除小程序基础库", "点击清除已下载的小程序基础库", DebugEntity.TYPE_2));
-//        serverConfigEntities.add(new DebugEntity("小程序测试", "点击进入小程序测试页面", DebugEntity.TYPE_2));
         serverConfigEntities.add(new SettingEntity("CheckPermission", "CheckPermission", SettingEntity.TYPE_2));
         mAdapter.setDebugEntityList(serverConfigEntities);
 

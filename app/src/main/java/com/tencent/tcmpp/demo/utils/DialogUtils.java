@@ -8,8 +8,8 @@ import android.content.DialogInterface;
 public class DialogUtils {
     public static AlertDialog showDialog(Context context, String title, String msg) {
         final AlertDialog alertDialog = new AlertDialog.Builder(context)
-                .setTitle(title)//标题
-                .setMessage(msg)//内容
+                .setTitle(title)
+                .setMessage(msg)
                 .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -24,8 +24,8 @@ public class DialogUtils {
 
     public static AlertDialog showDialog(Context context, String title, String msg, String positiveButton, DialogInterface.OnClickListener listener) {
         final AlertDialog alertDialog = new AlertDialog.Builder(context)
-                .setTitle(title)//标题
-                .setMessage(msg)//内容
+                .setTitle(title)
+                .setMessage(msg)
                 .setPositiveButton(positiveButton, listener)
                 .setCancelable(false)
                 .create();
@@ -37,8 +37,8 @@ public class DialogUtils {
                                          String positiveButton, DialogInterface.OnClickListener listener,
                                          String negativeButton, DialogInterface.OnClickListener cancelListener) {
         final AlertDialog alertDialog = new AlertDialog.Builder(context)
-                .setTitle(title)//标题
-                .setMessage(msg)//内容
+                .setTitle(title)
+                .setMessage(msg)
                 .setPositiveButton(positiveButton, listener)
                 .setNegativeButton(negativeButton, cancelListener)
                 .setCancelable(false)

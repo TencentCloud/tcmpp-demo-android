@@ -1,35 +1,37 @@
-# 简介
+# Introduction
 
-[腾讯云小程序平台（Tencent Cloud Mini Program Platform，TCMPP）](https://cloud.tencent.com/product/tcmpp)整合了腾讯在小程序开发、测试、发布、运营和小程序容器的技术能力，为企业客户提供一站式、覆盖全生命周期的小程序技术平台。核心服务包括开发者工具 IDE、预览调试 App、安卓端容器 SDK、iOS 端容器 SDK、统一企业运营端、开放平台端等，帮助企业机构低成本、高效率地打造小程序服务。
+The Tencent Cloud Mini Program Platform (Tencent Cloud Mini Program Platform, TCMPP) integrates Tencent's technical capabilities in mini program development, testing, release, operation, and mini program container technology. It provides a one-stop, full lifecycle mini program technology platform for corporate customers. The core services include developer tools IDE, preview and debugging App, Android container SDK, iOS container SDK, unified enterprise operation end, and open platform end, etc. These services help enterprises and institutions to create mini program services at low cost and high efficiency.
 
-tcmpp-demo-android 包含了TCMPP小程序容器集成的示例代码，方便开发者参考。
+The `tcmpp-demo-android` includes example code for integrating TCMPP mini program containers, making it convenient for developers to reference.
 
-# 使用说明
+# Usage Instructions
 
-## 替换应用配置
+## Replace Application Configuration
 
-Demo 内置的配置文件，是与官方测试应用绑定的，在体验预览您个人应用下的小程序前，需按如下步骤完成配置替换：
+The configuration file built into the demo is bound to the official test application. Before you can preview your personal application's mini programs, you need to follow these steps to replace the configuration:
 
-1. 登录 [腾讯云小程序平台控制台](https://console.cloud.tencent.com/tcmpp)，下载宿主应用配置文件，用来替换项目中 app/main/assets 路径下的 tcmpp-android-configurations.json 文件。
-2. 修改项目包名，与控制台应用配置相同，如果包名不一致，运行时无法通过校验。
+1. Log in to the [Tencent Cloud Mini Program Platform console](https://console.cloud.tencent.com/tcmpp) and download the host application configuration file to replace the `tcmpp-android-configurations.json` file in the `app/main/assets` path of the project.
+2. Modify the project package name to match the configuration in the console. If the package name is inconsistent, it will not pass the verification when running.
 
-完成上述步骤，即可运行体验容器基本功能了。
+After completing these steps, you can run and experience the basic functions of the container.
 
-## 替换内置小程序列表
+## Replace Built-in Mini Program List
 
-Demo内置了示例小程序，因默认的内置小程序与官方测试应用绑定，所以替换为您个人应用配置之后，内置小程序将无法打开。您可以通过修改内置小程序配置信息，来修改内置小程序列表：
+The demo comes with a set of example mini programs. Since the default built-in mini programs are bound to the official test application, they will not open after you replace them with your personal application configuration. You can modify the built-in mini program list by changing the configuration information:
 
-- 配置文件路径：app/src/main/assets/default_mini_apps.json。
-- 配置文件格式：最外层为数组，每个数组对象代表一个内置小程序。
+- Configuration file path: `app/src/main/assets/default_mini_apps.json`.
+- Configuration file format: The outermost layer is an array, with each array object representing a built-in mini program.
 
-```
-[ 
-   {        
-       "appId":"mp225lc9che0ve9o", // 小程序ID
-       "name":"官方示例",  // 小程序名字
-       "iconUrl":"https://xxx.png" // 小程序logo
-   }
-]
-```
+  ```
+  [
+      {
+          "appId": "mp225lc9che0ve9o", // Mini Program ID
+          "name": "Official Example",  // Mini Program Name
+          "iconUrl": "https://xxx.png" // Mini Program Logo URL
+      }
+  ]
+  ```
 
-**注意**：内置小程序需与宿主应用有绑定关系，并且有已发布的正式版本。
+Note: Built-in mini programs must have a binding relationship with the host application and must have a published official version.
+
+---

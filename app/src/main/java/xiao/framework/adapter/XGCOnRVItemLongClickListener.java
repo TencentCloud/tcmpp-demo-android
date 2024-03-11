@@ -19,11 +19,6 @@ package xiao.framework.adapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * 作者:guochang xiao
- * 创建时间:15/5/28 上午7:28
- * 描述:RecyclerView的item长按事件监听器
- */
 public interface XGCOnRVItemLongClickListener {
     boolean onRVItemLongClick(ViewGroup parent, View itemView, int position);
 }

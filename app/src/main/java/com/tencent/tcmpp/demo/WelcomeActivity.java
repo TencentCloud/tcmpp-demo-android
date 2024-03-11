@@ -21,7 +21,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-        decorView.setSystemUiVisibility(uiOptions); // 将decorView设置为全屏显示
+        decorView.setSystemUiVisibility(uiOptions);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
         setContentView(R.layout.applet_activity_welcome);
 
@@ -41,8 +41,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void agreePrivacyAuth(Context context) {
         CommonSp.getInstance().putPrivacyAuth(context, true);
-        // 注意：调用任何TmfMiniSDK对外接口，都会触发小程序容器的初始化
-        // 因此如果涉及隐私政策，请确保在同意之后再调用TmfMiniSDK相关接口
+        // 注意：调用任何TmfMiniSDK对外接口，都会触发小程序容器的初始化，因此如果涉及隐私政策，请确保在同意之后再调用TmfMiniSDK相关接口
+        // Note: Calling any TmfMiniSDK external interface will trigger the initialization of the mini program container,
+        // so if privacy policy is involved, make sure to call the TmfMiniSDK related interface after agreeing
         TmfMiniSDK.setLocation(Constants.COUNTRY, Constants.PROVINCE, Constants.CITY);
         TmfMiniSDK.preloadMiniApp(context, null);
     }

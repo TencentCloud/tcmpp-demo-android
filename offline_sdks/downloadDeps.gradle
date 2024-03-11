@@ -37,6 +37,7 @@ dependencies {
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_wifi'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_media_support'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_v8'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_lamemp3'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_network']) {
         exclude(group: "org.jetbrains.kotlin")
     }

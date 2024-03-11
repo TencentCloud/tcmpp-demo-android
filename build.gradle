@@ -12,7 +12,6 @@ ext {
 
     def isCi = (System.getenv('CI') != null && System.env.CI == "True")
     if (isCi) {
-        // 从流水线获取是否使用离线SDK方式集成
         localProperties.setProperty("tcmpp.useOfflineSdks", System.env.useOfflineSdks)
         localProperties.store(rootProject.file('local.properties').newDataOutputStream(), null)
     }

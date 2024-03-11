@@ -50,15 +50,6 @@ public class AppAdapter extends XGCRecyclerViewAdapter<MiniApp, AppAdapter.AppHo
         private TextView mVersionText;
         private TextView mFlagText;
 
-        /**
-         * 子类必须要实现
-         *
-         * @param context
-         * @param adapter
-         * @param parent
-         * @param itemView
-         * @param viewType
-         */
         public AppHolder(Context context, AppAdapter adapter, ViewGroup parent, View itemView, int viewType) {
             super(context, adapter, parent, itemView, viewType);
         }

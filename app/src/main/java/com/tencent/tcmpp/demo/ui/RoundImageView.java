@@ -29,18 +29,12 @@ public class RoundImageView extends AppCompatImageView {
         initView(context);
     }
 
-    /**
-     * 获取属性
-     */
     private void getAttributes(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.RoundImageView);
         mRadius = ta.getDimension(R.styleable.RoundImageView_radius, -1);
         ta.recycle();
     }
 
-    /**
-     * 初始化
-     */
     private void initView(Context context) {
         mRect = new RectF();
         mPath = new Path();
@@ -57,9 +51,6 @@ public class RoundImageView extends AppCompatImageView {
         }
     }
 
-    /**
-     * 圆角
-     */
     private void clipRoundRect(int width, int height) {
         mRect.left = 0;
         mRect.top = 0;
@@ -68,9 +59,6 @@ public class RoundImageView extends AppCompatImageView {
         mPath.addRoundRect(mRect, mRadius, mRadius, Path.Direction.CW);
     }
 
-    /**
-     * 圆形
-     */
     private void clipCircle(int width, int height) {
         int radius = Math.min(width, height)/2;
         mPath.addCircle(width/2, height/2, radius, Path.Direction.CW);

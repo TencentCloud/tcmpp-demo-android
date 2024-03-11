@@ -29,7 +29,6 @@ def main():
     local_repo = "../offline_sdks/tcmpp-local-repo"
 
     dependencies = [
-        # 添加需要下载的依赖项，例如：
         ("com.tencent.tcmpp.android", "mini_annotation", "1.5.1", "jar"),
         ("com.tencent.tcmpp.android", "mini_annotation_processor", "1.5.2", "jar"),
         ("com.squareup", "javapoet", "1.11.1", "jar")

@@ -10,34 +10,16 @@ import androidx.appcompat.widget.AppCompatEditText;
 
 public class PwdEditText extends AppCompatEditText {
 
-    /**
-     * 密码长度
-     */
     private final int PWD_LENGTH = 6;
-    /**
-     * 密码框
-     */
     private final Rect mRect = new Rect();
 
-    /**
-     * 密码画笔
-     */
     private final Paint mPwdPaint;
 
-    /**
-     * 密码框画笔
-     */
     private final Paint mRectPaint;
 
     private final Paint mWhitePaint;
-    /**
-     * 输入的密码长度
-     */
     private int mInputLength;
 
-    /**
-     * 输入结束监听
-     */
     private OnInputFinishListener mOnInputFinishListener;
 
 

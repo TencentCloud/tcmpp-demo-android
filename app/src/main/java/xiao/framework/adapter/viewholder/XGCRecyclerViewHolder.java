@@ -18,39 +18,19 @@ import xiao.framework.adapter.XGCRecyclerViewAdapter;
 public abstract class XGCRecyclerViewHolder<M, Adpt extends XGCRecyclerViewAdapter> extends RecyclerView.ViewHolder {
     protected Context mContext;
     protected Adpt mAdapter;
-    /**
-     * 视图查找器
-     */
+
     protected ViewFinder mViewFinder;
-    /**
-     * ItemView视图的parent
-     */
+
     protected ViewGroup mParentView;
-    /**
-     * ItemView视图(RecyclerView.ViewHolder)
-     */
+
     protected int mViewType;
-    /**
-     * 是否使用ButterKnife绑定视图
-     */
+
     private boolean isBindView = true;
-    /**
-     * 整个item的点击监听
-     */
+
     protected XGCOnRVItemClickListener mOnRVItemClickListener;
-    /**
-     * 整个item的长按监听
-     */
+
     protected XGCOnRVItemLongClickListener mOnRVItemLongClickListener;
 
-    /**
-     * 子类必须要实现
-     *
-     * @param context
-     * @param parent
-     * @param itemView
-     * @param viewType
-     */
     public XGCRecyclerViewHolder(Context context, Adpt adapter, ViewGroup parent, View itemView, int viewType) {
         super(itemView);
 
@@ -69,9 +49,6 @@ public abstract class XGCRecyclerViewHolder<M, Adpt extends XGCRecyclerViewAdapt
         this.isBindView = isBindView;
     }
 
-    /**
-     * 初始化各个子视图
-     */
     protected abstract void initWidgets();
 
     public abstract void setData(M data);
@@ -80,27 +57,14 @@ public abstract class XGCRecyclerViewHolder<M, Adpt extends XGCRecyclerViewAdapt
         return mViewFinder.findViewById(id);
     }
 
-    /**
-     * 设置item的点击事件监听器
-     *
-     * @param onRVItemClickListener
-     */
     public void setOnRVItemClickListener(XGCOnRVItemClickListener onRVItemClickListener) {
         mOnRVItemClickListener = onRVItemClickListener;
     }
 
-    /**
-     * 设置item的长按事件监听器
-     *
-     * @param onRVItemLongClickListener
-     */
     public void setOnRVItemLongClickListener(XGCOnRVItemLongClickListener onRVItemLongClickListener) {
         mOnRVItemLongClickListener = onRVItemLongClickListener;
     }
 
-    /**
-     * 设置item的点击事件监听器
-     */
     private View.OnClickListener iItemClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -115,9 +79,6 @@ public abstract class XGCRecyclerViewHolder<M, Adpt extends XGCRecyclerViewAdapt
         }
     };
 
-    /**
-     * 设置item的长按事件监听器
-     */
     private View.OnLongClickListener iItemLongClickListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View view) {

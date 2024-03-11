@@ -57,8 +57,6 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
 
     @Override
     public Drawable getDrawable(Context context, String source, int width, int height, Drawable defaultDrawable) {
-        //接入方接入自己的ImageLoader
-        //demo里使用开源的universalimageloader
         UniversalDrawable drawable = new UniversalDrawable();
         if (TextUtils.isEmpty(source)) {
             return drawable;
@@ -101,6 +99,7 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
     public MiniConfigData configData(Context context, int configType, JSONObject params) {
         if(configType == MiniConfigData.TYPE_CUSTOM_JSAPI) {
             //自定义JsApi配置
+            //Custom JsApi configuration
             MiniConfigData.CustomJsApiConfig customJsApiConfig = new MiniConfigData.CustomJsApiConfig();
             customJsApiConfig.jsApiConfigPath = "tcmpp/custom-config.json";
 
@@ -112,8 +111,10 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
 
         if(configType == MiniConfigData.TYPE_LIVE) {
             //Live直播配置
+            //Live broadcast configuration
             MiniConfigData.LiveConfig liveConfig = new MiniConfigData.LiveConfig();
             //下面的key和url仅可用于demo
+            //The following key and url can only be used for demo
             liveConfig.licenseKey = "6ae463dfe484853eef22052ca122623b";
             liveConfig.licenseUrl = "https://license.vod2.myqcloud.com/license/v2/1314481471_1/v_cube.license";
 
@@ -138,8 +139,9 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
             //webView userAgent
             String ua = params.optString(MiniConfigData.WebViewConfig.WEBVIEW_CONFIG_UA);
             //设置新的userAgent
+            //Set new userAgent
             MiniConfigData.WebViewConfig webViewConfig = new MiniConfigData.WebViewConfig();
-            webViewConfig.userAgent = "xxxxxxxxxxxx";
+            webViewConfig.userAgent = "UATest";
 
             return new MiniConfigData
                     .Builder()

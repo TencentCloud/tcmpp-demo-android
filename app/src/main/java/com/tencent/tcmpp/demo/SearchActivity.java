@@ -119,8 +119,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     public void onRVItemClick(ViewGroup parent, View itemView, int position) {
         MiniApp item = mAppAdapter.getItem(position);
         MiniStartOptions miniStartOptions = new MiniStartOptions();
-//        miniStartOptions.entryPath = "packageComponent/pages/view/swiper/swiper";//子包
-//        miniStartOptions.entryPath = "packageIndependent/pages/index/index";//独立子包
         miniStartOptions.resultReceiver = mResultReceiver;
         TmfMiniSDK.startMiniApp(this, item.appId, MiniScene.LAUNCH_SCENE_SEARCH, MiniApp.TYPE_ONLINE, miniStartOptions);
     }

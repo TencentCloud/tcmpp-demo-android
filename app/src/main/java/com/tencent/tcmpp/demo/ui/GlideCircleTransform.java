@@ -12,7 +12,6 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 
 import java.security.MessageDigest;
 
-//圆形图片
 public class GlideCircleTransform extends BitmapTransformation {
 
     private static Bitmap circleCrop(BitmapPool pool, Bitmap source) {

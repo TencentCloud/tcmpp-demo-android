@@ -1,10 +1,10 @@
 ext {
     TCMPPDeps = [
-            'mini_core'                : "com.tencent.tcmpp.android:mini_core:1.5.16",
-            'mini_annotation_processor': "com.tencent.tcmpp.android:mini_annotation_processor:1.5.2",
-            'mini_extra_qrcode'        : "com.tencent.tcmpp.android:mini_extra_qrcode:1.5.1",
+            'mini_core'                : "com.tencent.tcmpp.android:mini_core:2.0.2",
+            'mini_annotation_processor': "com.tencent.tcmpp.android:mini_annotation_processor:1.5.3",
+            'mini_extra_qrcode'        : "com.tencent.tcmpp.android:mini_extra_qrcode:1.5.2",
             'mini_extra_map'           : "com.tencent.tcmpp.android:mini_extra_map:1.5.1",
-            'mini_extra_google_map'    : "com.tencent.tcmpp.android:mini_extra_google_map:1.5.1",
+            'mini_extra_google_map'    : "com.tencent.tcmpp.android:mini_extra_google_map:1.5.2",
             'mini_extra_huawei_map'    : "com.tencent.tcmpp.android:mini_extra_huawei_map:1.5.1",
             'mini_extra_trtc_live'     : "com.tencent.tcmpp.android:mini_extra_trtc_live:1.5.0.0",
             'mini_extra_nfc'           : "com.tencent.tcmpp.android:mini_extra_nfc:1.5.2",
@@ -16,8 +16,9 @@ ext {
             'mini_extra_calendar'      : "com.tencent.tcmpp.android:mini_extra_calendar:1.5.3",
             'mini_extra_network'       : "com.tencent.tcmpp.android:mini_extra_network:1.5.0",
             'mini_extra_wifi'          : "com.tencent.tcmpp.android:mini_extra_wifi:1.5.3",
-            'mini_extra_media_support' : "com.tencent.tcmpp.android:mini_extra_media_support:1.5.3",
+            'mini_extra_media_support' : "com.tencent.tcmpp.android:mini_extra_media_support:1.5.4",
             'mini_extra_v8'            : "com.tencent.tcmpp.android:mini_extra_v8:1.5.1",
+//            'mini_extra_lamemp3'            : "com.tencent.tcmpp.android:mini_extra_lamemp3:1.5.0",
             'mini_extra_dynamic_x5'    : "com.tencent.tcmpp.android:mini_extra_dynamic_x5:1.5.6",
             'dynamicx5'                : "com.tencent.tmf.android:dynamicx5:1.3.6.9"
     ]

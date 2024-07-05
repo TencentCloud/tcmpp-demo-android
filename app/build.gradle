@@ -131,8 +131,8 @@ dependencies {
 
         // X5 SDK 可以开发者根据工程实际情况，引入X5不同版本类型，具体请参考接入文档说明
         // x5动态内核引入示例
-        implementation project.ext.TCMPPDeps['mini_extra_dynamic_x5']
-        implementation project.ext.TCMPPDeps['dynamicx5']
+//        implementation project.ext.TCMPPDeps['mini_extra_dynamic_x5']
+//        implementation project.ext.TCMPPDeps['dynamicx5']
 
         // mini app start
         implementation project.ext.TCMPPDeps['mini_core']

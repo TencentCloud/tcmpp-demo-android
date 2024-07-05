@@ -13,8 +13,8 @@ dependencies {
         exclude(group: "org.jetbrains.kotlin")
     }
 
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_dynamic_x5'])
-    tcmppDeps(project.ext.TCMPPDeps['dynamicx5'])
+//    tcmppDeps(project.ext.TCMPPDeps['mini_extra_dynamic_x5'])
+//    tcmppDeps(project.ext.TCMPPDeps['dynamicx5'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_qrcode']) {
         exclude(group: "androidx.appcompat")
     }
@@ -36,8 +36,8 @@ dependencies {
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_calendar'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_wifi'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_media_support'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_v8'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_lamemp3'])
+//    tcmppDeps(project.ext.TCMPPDeps['mini_extra_v8'])
+//    tcmppDeps(project.ext.TCMPPDeps['mini_extra_lamemp3'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_network']) {
         exclude(group: "org.jetbrains.kotlin")
     }

@@ -13,9 +13,10 @@ public class WxApiPlugin extends BaseJsPlugin {
 
     @JsEvent("login")
     public void login(final RequestEvent req) {
+
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("key", "wx.login");
+            jsonObject.put("key", "wx.login" + mMiniAppInfo.appId);
         } catch (JSONException e) {
             e.printStackTrace();
         }

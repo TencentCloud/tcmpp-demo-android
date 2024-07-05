@@ -30,6 +30,7 @@ public class Constants {
             Manifest.permission.VIBRATE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.SYSTEM_ALERT_WINDOW,
+            Manifest.permission.READ_MEDIA_IMAGES,
             //蓝牙
             permission.BLUETOOTH,
             permission.BLUETOOTH_ADMIN,

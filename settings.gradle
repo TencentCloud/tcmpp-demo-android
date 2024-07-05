@@ -17,7 +17,7 @@ pluginManagement {
             }
         }
         maven {
-            url 'https://tmf-work-maven.pkg.coding.net/repository/tmf/android/'
+            url 'https://tcmpp-work-maven.pkg.coding.net/repository/tcmpp/android/'
         }
     }
 }
@@ -43,7 +43,7 @@ dependencyResolutionManagement {
         }
 
         maven {
-            url 'https://tmf-work-maven.pkg.coding.net/repository/tmf/android/'
+            url 'https://tcmpp-work-maven.pkg.coding.net/repository/tcmpp/android/'
         }
         maven { url "${rootProject.projectDir}/offline_sdks/tcmpp-local-repo/"}
     }

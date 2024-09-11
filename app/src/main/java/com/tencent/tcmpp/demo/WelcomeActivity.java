@@ -68,13 +68,6 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void startMain(){
-//        TmfMiniSDK.loginTmf("jemmy", "iLoveTMF!", true, new MiniCallback<Void>() {
-//            @Override
-//            public void value(int i, String s, Void unused) {
-//                Log.e("TmfMiniSDK", "login code=" + i + ", msg=" + s);
-//                CommonSp.getInstance().putUser("jemmy", "iLoveTMF!");
-//            }
-//        });
         startActivity(new Intent(this, MainActivity.class));
     }
 }

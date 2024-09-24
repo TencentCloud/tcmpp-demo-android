@@ -12,4 +12,14 @@
     <color name="c_575757">#575757</color>
     <color name="c_4f4f4f">#4f4f4f</color>
     <color name="applet_c_828282">#828282</color>
+    <color name="applet_tab_unselected_text_color">#828282</color>
+    <color name="applet_tab_selected_text_color">#FF000000</color>
+    <color name="applet_tab_unselected_indicator_color">#FFFFFFFF</color>
+    <color name="applet_tab_selected_indicator_color">#006EFF</color>
+    <color name="applet_mini_app_item_category">#FA9C45</color>
+    <color name="applet_mini_app_bg_of_tool_dialog">#4C4C4C</color>
+    <color name="applet_mini_app_toast_color">#CCD0D0D0</color>
+    <color name="applet_mini_operate_bg">#F7F7F7</color>
+    <color name="applet_pay_success_green">#57BE6A</color>
+    <color name="applet_pay_btn_color">#CCF2F2F2</color>
 </resources>

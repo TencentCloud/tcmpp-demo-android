@@ -38,7 +38,7 @@
         <TextView
                 android:textSize="16sp"
                 android:gravity="center"
-                android:text="¥"
+                android:text="$"
                 android:layout_marginEnd="5dp"
                 android:textStyle="bold"
                 android:textColor="#646464"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.tencent.tcmpp.demo.pay.PwdEditText
+    <com.tencent.tcmpp.demo.open.payment.PwdEditText
             android:id="@+id/pwd"
             android:layout_width="match_parent"
             android:layout_marginStart="20dp"

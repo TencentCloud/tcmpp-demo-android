@@ -52,4 +52,36 @@
     <string name="applet_cancel">取消</string>
     <string name="applet_input_to_search">输入内容搜索小程序</string>
     <string name="applet_search_no_ava_mini">未搜索到可用小程序</string>
+
+    <string name="applet_login_title">TCMPP</string>
+    <string name="applet_login_title_desc">A platform that takes your App to the next level</string>
+    <string name="applet_login_input_hint">请输入用户名称</string>
+    <string name="applet_login_confirm">登陆</string>
+    <string name="applet_main_title">TCMPP助手</string>
+    <string name="applet_main_tab_my">我的小程序</string>
+    <string name="applet_main_tab_recent">最近使用</string>
+    <string name="applet_login_success">登陆成功</string>
+    <string name="applet_main_tool_scan">扫一扫</string>
+    <string name="applet_main_tool_language">语言</string>
+    <string name="applet_main_tool_logout">退出登陆</string>
+    <string name="applet_main_mini_operate_preload">预加载</string>
+    <string name="applet_main_mini_operate_clear_cache">删除缓存</string>
+    <string name="applet_main_mini_operate_reset">重置</string>
+    <string name="applet_main_mini_operate_cancel">取消</string>
+    <string name="applet_current_language">当前语言为: %s</string>
+    <string name="applet_system_language">系统语言</string>
+    <string name="applet_pre_load_success">预加载成功</string>
+    <string name="applet_clear_cache_success">删除缓存成功</string>
+    <string name="applet_reset_load_success">重置成功</string>
+    <string name="applet_pay_success">支付成功</string>
+    <string name="applet_pay_failed">支付失败</string>
+    <string name="applet_pay_finished">完成</string>
+    <string name="applet_pay_type">$</string>
+
+    <string-array name="applet_language_name">
+        <item>中文</item>
+        <item>English</item>
+        <item>français</item>
+        <item>Bahasa indonesia</item>
+    </string-array>
 </resources>

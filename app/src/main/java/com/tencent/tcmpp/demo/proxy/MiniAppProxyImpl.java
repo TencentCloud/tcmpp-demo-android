@@ -7,6 +7,11 @@ import android.text.TextUtils;
 
 import com.tencent.tcmpp.demo.BuildConfig;
 import com.tencent.tcmpp.demo.Constants;
+import com.tencent.tcmpp.demo.TCMPPDemoApplication;
+import com.tencent.tcmpp.demo.bean.UserInfo;
+import com.tencent.tcmpp.demo.open.login.Login;
+import com.tencent.tcmpp.demo.open.login.LoginApi;
+import com.tencent.tcmpp.demo.utils.LocalUtil;
 import com.tencent.tcmpp.demo.utils.UniversalDrawable;
 import com.tencent.tmf.mini.api.bean.MiniConfigData;
 import com.tencent.tmfmini.sdk.annotation.ProxyService;
@@ -21,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 @ProxyService(proxy = MiniAppProxy.class)
@@ -157,5 +163,16 @@ public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
     @Override
     public OnMoreItemSelectedListener getMoreItemSelectedListener() {
         return new DefaultMoreItemSelectedListener();
+    }
+
+    @Override
+    public Locale getLocale() {
+        return LocalUtil.current();
+    }
+
+    @Override
+    public String getAccount() {
+        LoginApi.UserInfo userInfo = Login.g(TCMPPDemoApplication.sApp).getUserInfo();
+        return userInfo != null ? userInfo.userId : "unknown";
     }
 }

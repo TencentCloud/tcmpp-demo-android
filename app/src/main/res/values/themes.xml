@@ -2,4 +2,10 @@
     <!-- Base application theme. -->
     <style name="Theme.TCMPPDemo" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/applet_tab_selected_indicator_color</item>
+        <item name="tabTextColor">@color/applet_tab_unselected_text_color</item>
+        <item name="tabSelectedTextColor">@color/applet_tab_selected_text_color</item>
+        <item name="tabIndicator">@drawable/tab_indicator</item>
+    </style>
 </resources>

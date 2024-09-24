@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.tencent.tcmpp.demo.Constants;
-import com.tencent.tcmpp.demo.TransActivity;
+import com.tencent.tcmpp.demo.activity.TransActivity;
 import com.tencent.tmf.mini.api.TmfMiniSDK;
 import com.tencent.tmfmini.sdk.annotation.JsEvent;
 import com.tencent.tmfmini.sdk.annotation.JsPlugin;

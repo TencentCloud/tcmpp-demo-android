@@ -28,7 +28,7 @@ public class CommonSp extends BaseSp {
     private static final String KEY_USER = "user";
     private static final String KEY_LAST_USER = "last_user";
     private static final String KEY_IS_PRIVACY = "is_privacy_auth";
-
+    private static final String KEY_MINI_LANGUAGE = "mini_language";
 
     private static volatile CommonSp mInstatnce;
 
@@ -190,6 +190,15 @@ public class CommonSp extends BaseSp {
     public void putPrivacyAuth(Context context, boolean value) {
         putBoolean(context.getSharedPreferences(FILE_NAME, MODE_PRIVATE).edit(), KEY_IS_PRIVACY, value);
     }
+
+    public void putMiniLanguage(int languageIndex) {
+        putInt(mEditor, KEY_MINI_LANGUAGE, languageIndex);
+    }
+
+    public int getMiniLanguage() {
+        return getInt(mSharedPreferences, KEY_MINI_LANGUAGE, 0);
+    }
+
 
     public static class User {
         @SerializedName("name")

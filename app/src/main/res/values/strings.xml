@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Applet assistant</string>
+    <string name="app_name">TCMPP Assistant</string>
     <string name="main_title_example_apps">Example mini apps</string>
     <string name="main_btn_scan">Scan</string>
     <string name="main_title_recent_apps">Recent used</string>
@@ -52,4 +52,35 @@
     <string name="applet_cancel">cancel</string>
     <string name="applet_input_to_search">Enter content search applet</string>
     <string name="applet_search_no_ava_mini">No available applet found</string>
+
+    <string name="applet_login_title">TCMPP</string>
+    <string name="applet_login_title_desc">A platform that takes your App to the next level</string>
+    <string name="applet_login_input_hint">Please enter the username</string>
+    <string name="applet_login_confirm">Log in</string>
+    <string name="applet_main_title">TCMPP Assitant</string>
+    <string name="applet_main_tab_my">My mini programs</string>
+    <string name="applet_main_tab_recent">Recently used</string>
+    <string name="applet_login_success">Logged in successfully</string>
+    <string name="applet_main_tool_scan">Scan</string>
+    <string name="applet_main_tool_language">Language</string>
+    <string name="applet_main_tool_logout">Log out</string>
+    <string name="applet_main_mini_operate_preload">Preload</string>
+    <string name="applet_main_mini_operate_clear_cache">Clear Cache</string>
+    <string name="applet_main_mini_operate_reset">Reset</string>
+    <string name="applet_main_mini_operate_cancel">Cancel</string>
+    <string name="applet_pre_load_success">Preloaded successfully</string>
+    <string name="applet_clear_cache_success">Cache cleared successfully</string>
+    <string name="applet_reset_load_success">Reset successfully</string>
+    <string name="applet_current_language">Current Language: %s</string>
+    <string name="applet_system_language">System Language</string>
+    <string name="applet_pay_success">Pay Success</string>
+    <string name="applet_pay_failed">Pay Failed</string>
+    <string name="applet_pay_finished">Finished</string>
+    <string name="applet_pay_type">$</string>
+    <string-array name="applet_language_name">
+        <item>中文</item>
+        <item>English</item>
+        <item>français</item>
+        <item>Bahasa indonesia</item>
+    </string-array>
 </resources>

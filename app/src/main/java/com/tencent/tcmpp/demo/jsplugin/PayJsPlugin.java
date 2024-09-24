@@ -1,6 +1,6 @@
 package com.tencent.tcmpp.demo.jsplugin;
 
-import com.tencent.tcmpp.demo.pay.CustomPayDemo;
+import com.tencent.tcmpp.demo.open.payment.CustomPayDemo;
 import com.tencent.tmfmini.sdk.annotation.JsEvent;
 import com.tencent.tmfmini.sdk.annotation.JsPlugin;
 import com.tencent.tmfmini.sdk.launcher.core.model.RequestEvent;

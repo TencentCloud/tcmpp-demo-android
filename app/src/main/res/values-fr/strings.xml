@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Assistant TCMPP</string>
+    <string name="main_title_example_apps">Example mini apps</string>
+    <string name="main_btn_scan">Scan</string>
+    <string name="main_title_recent_apps">Recent used</string>
+    <string name="applet_debug_info">debug information</string>
+
+    <string name="applet_mini_data_country">China</string>
+    <string name="applet_mini_proxy_province">Beijing</string>
+    <string name="applet_mini_proxy_city">Beijing</string>
+
+
+    <string name="common_lib_tips">Welcome to TCMPP</string>
+    <string name="applet_main_act_delete_msg_confirm">confirm</string>
+    <string name="applet_main_act_delete_msg_cancal">cancel</string>
+    <string name="applet_main_privacy_auth">Privacy authorization</string>
+    <string name="applet_main_privacy_auth_content">Do you agree to xxx authorization</string>
+    <string name="version_dev">Develop</string>
+    <string name="version_pre">Preview</string>
+    <string name="version_exp">Experience</string>
+    <string name="mini_app_recent_list_empty">No recently used applet</string>
+    <string name="mini_app_scan_tip">Please scan the mini program QR code to experience</string>
+
+    <string name="applet_config_server">config server</string>
+    <string name="applet_add_server">Add server</string>
+    <string name="applet_server_name">Server name</string>
+    <string name="applet_server_config">Input server config</string>
+    <string name="applet_server_save_config">Save config</string>
+
+    <string name="applet_content_can_not_be_empty">the content can not be blank</string>
+    <string name="applet_server_name_must_be">server name requires 2~10 character</string>
+    <string name="applet_config_already_exists">config file exist: %s</string>
+    <string name="applet_config_must_be_json">content must be JSON </string>
+
+    <string name="applet_tmf_public_cloud">TCMPP</string>
+    <string name="applet_choose_below_or_select_rightr">Please select from the list below or add in the upper right corner</string>
+
+    <string name="applet_inner_app_config">APP built-in configuration</string>
+    <string name="applet_save_success">Successfully saved</string>
+
+    <string name="applet_restart_to_take_effective">Need to restart the APP to take effect</string>
+    <string name="applet_restart_to_take_effective_delete">delete</string>
+    <string name="applet_restart_to_take_effective_delete_config">Whether to delete the configuration file</string>
+
+    <string name="applet_tmf_confirm">confirm</string>
+    <string name="applet_tmf_cancel">cancel</string>
+    <string name="applet_develop_version">develop version</string>
+
+    <string name="applet_search_result">search results</string>
+    <string name="applet_search">search</string>
+    <string name="applet_search_hint">search</string>
+    <string name="applet_cancel">cancel</string>
+    <string name="applet_input_to_search">Enter content search applet</string>
+    <string name="applet_search_no_ava_mini">No available applet found</string>
+
+    <string name="applet_login_title">TCMPP</string>
+    <string name="applet_login_title_desc">A platform that takes your App to the next level</string>
+    <string name="applet_login_input_hint">Veuillez saisir le nom d\'utilisateur</string>
+    <string name="applet_login_confirm">Connexion</string>
+    <string name="applet_main_title">Assistant TCMPP</string>
+    <string name="applet_main_tab_my">Mes mini-programmes</string>
+    <string name="applet_main_tab_recent">Récemment utilisé</string>
+    <string name="applet_login_success">Connexion réussie</string>
+    <string name="applet_main_tool_scan">Numériser</string>
+    <string name="applet_main_tool_language">Langue</string>
+    <string name="applet_main_tool_logout">Déconnexion</string>
+    <string name="applet_main_mini_operate_preload">Préchargement</string>
+    <string name="applet_main_mini_operate_clear_cache">Nettoyer le cache</string>
+    <string name="applet_main_mini_operate_reset">Réinitialiser</string>
+    <string name="applet_main_mini_operate_cancel">Annuler</string>
+    <string name="applet_current_language">Current Language: %s</string>
+    <string name="applet_system_language">System Language</string>
+    <string name="applet_pre_load_success">Préchargé avec succès</string>
+    <string name="applet_clear_cache_success">Cache nettoyé avec succès</string>
+    <string name="applet_reset_load_success">Réinitialisation réussie</string>
+    <string name="applet_pay_success">Paiement réussi</string>
+    <string name="applet_pay_finished">Terminé</string>
+    <string name="applet_pay_type">$</string>
+    <string name="applet_pay_failed">Pay Failed</string>
+    <string-array name="applet_language_name">
+        <item>中文</item>
+        <item>English</item>
+        <item>français</item>
+        <item>Bahasa indonesia</item>
+    </string-array>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <item android:gravity="center">
+        <shape>
+
+            <size
+                android:width="16dp"
+                android:height="3dp" />
+
+            <corners android:radius="4dp" />
+
+            <solid android:color="@color/applet_tab_selected_indicator_color" />
+
+        </shape>
+    </item>
+
+</layer-list>

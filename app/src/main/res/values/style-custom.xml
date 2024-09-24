@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:icon">@mipmap/applet_ic_tcmpp_login</item>
+        <item name="android:label">@string/applet_login_title</item>
+    </style>
+
+</resources>

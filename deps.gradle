@@ -1,11 +1,11 @@
 ext {
     TCMPPDeps = [
-            'mini_core'                : "com.tencent.tcmpp.android:mini_core:2.0.7",
+            'mini_core'                : "com.tencent.tcmpp.android:mini_core:2.0.9",
             'mini_annotation_processor': "com.tencent.tcmpp.android:mini_annotation_processor:1.5.3",
             'mini_extra_qrcode'        : "com.tencent.tcmpp.android:mini_extra_qrcode:1.5.3",
-            'mini_extra_map'           : "com.tencent.tcmpp.android:mini_extra_map:1.5.1",
-            'mini_extra_google_map'    : "com.tencent.tcmpp.android:mini_extra_google_map:1.5.2",
-            'mini_extra_huawei_map'    : "com.tencent.tcmpp.android:mini_extra_huawei_map:1.5.1",
+            'mini_extra_map'           : "com.tencent.tcmpp.android:mini_extra_map:1.5.2",
+            'mini_extra_google_map'    : "com.tencent.tcmpp.android:mini_extra_google_map:1.5.3",
+            'mini_extra_huawei_map'    : "com.tencent.tcmpp.android:mini_extra_huawei_map:1.5.2",
             'mini_extra_trtc_live'     : "com.tencent.tcmpp.android:mini_extra_trtc_live:1.5.3",
             'mini_extra_nfc'           : "com.tencent.tcmpp.android:mini_extra_nfc:1.5.2",
             'mini_extra_lbs'           : "com.tencent.tcmpp.android:mini_extra_lbs:1.5.4",

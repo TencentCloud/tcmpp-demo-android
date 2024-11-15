@@ -130,6 +130,7 @@ dependencies {
     if (rootProject.ext.useOfflineSdks) {
         implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/offline_sdks/tcmpp-mini-core")
         implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/offline_sdks/tcmpp-tencent-map")
+        implementation "androidx.webkit:webkit:1.5.0"
     } else {
 
         // X5 SDK 可以开发者根据工程实际情况，引入X5不同版本类型，具体请参考接入文档说明

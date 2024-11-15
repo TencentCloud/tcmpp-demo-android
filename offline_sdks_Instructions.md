@@ -26,6 +26,7 @@ The mini program Offline sdk consists of the following parts:
   ```groovy
   implementation "com.google.android.material:material:1.3.0-alpha03"
   implementation 'androidx.core:core-ktx:1.6.0'
+  implementation "androidx.webkit:webkit:1.5.0"
   //gosn
   implementation 'com.google.code.gson:gson:2.8.6'
   // ok-http

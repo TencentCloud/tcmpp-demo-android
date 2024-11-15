@@ -30,7 +30,7 @@ def main():
 
     dependencies = [
         ("com.tencent.tcmpp.android", "mini_annotation", "1.5.1", "jar"),
-        ("com.tencent.tcmpp.android", "mini_annotation_processor", "1.5.2", "jar"),
+        ("com.tencent.tcmpp.android", "mini_annotation_processor", "1.5.3", "jar"),
         ("com.squareup", "javapoet", "1.11.1", "jar")
     ]
 

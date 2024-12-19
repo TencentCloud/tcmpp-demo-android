@@ -17,6 +17,4 @@ ext {
     }
 
     useOfflineSdks = localProperties.get("tcmpp.useOfflineSdks", false) == "true"
-
-    x5License = System.env.x5License
 }

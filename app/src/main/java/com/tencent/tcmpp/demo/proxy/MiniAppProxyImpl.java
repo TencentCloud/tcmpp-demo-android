@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import com.tencent.tcmpp.demo.BuildConfig;
 import com.tencent.tcmpp.demo.Constants;
 import com.tencent.tcmpp.demo.TCMPPDemoApplication;
-import com.tencent.tcmpp.demo.bean.UserInfo;
 import com.tencent.tcmpp.demo.open.login.Login;
 import com.tencent.tcmpp.demo.open.login.LoginApi;
 import com.tencent.tcmpp.demo.utils.LocalUtil;

@@ -175,7 +175,8 @@ dependencies {
         implementation project.ext.TCMPPDeps['mini_extra_wifi']
         //media support
         implementation project.ext.TCMPPDeps['mini_extra_media_support']
-
+        //mini game
+        implementation project.ext.TCMPPDeps['mini_extra_mbengine']
         //v8 engine
 //        implementation project.ext.TCMPPDeps['mini_extra_v8']
     }

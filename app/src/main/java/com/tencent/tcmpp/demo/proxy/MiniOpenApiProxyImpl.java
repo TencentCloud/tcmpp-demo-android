@@ -240,4 +240,9 @@ public class MiniOpenApiProxyImpl implements MiniOpenApiProxy {
         PaymentManager.g(miniAppContext.getContext()).startPayment(miniAppContext, params, result);
 //        result.onReceiveResult(true, jsonObject);
     }
+
+    @Override
+    public void requestMidasPaymentGameItem(IMiniAppContext iMiniAppContext, JSONObject jsonObject, AsyncResult asyncResult) {
+        QMLog.d(TAG, "requestPayment:" + jsonObject);
+    }
 }

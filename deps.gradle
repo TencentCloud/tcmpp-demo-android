@@ -17,6 +17,7 @@ ext {
             'mini_extra_network'       : "com.tencent.tcmpp.android:mini_extra_network:latest.release",
             'mini_extra_wifi'          : "com.tencent.tcmpp.android:mini_extra_wifi:latest.release",
             'mini_extra_media_support' : "com.tencent.tcmpp.android:mini_extra_media_support:latest.release",
+            'mini_extra_media_support_lite' : "com.tencent.tcmpp.android:mini_extra_media_support_lite:latest.release",
             'mini_extra_v8'            : "com.tencent.tcmpp.android:mini_extra_v8:latest.release",
             'mini_extra_mbengine'            : "com.tencent.tcmpp.android:mini_extra_mbengine:latest.release"
     ]

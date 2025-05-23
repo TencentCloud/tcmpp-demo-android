@@ -17,30 +17,80 @@ dependencies {
 //    tcmppDeps(project.ext.TCMPPDeps['dynamicx5'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_qrcode']) {
         exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
     }
 
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_map'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_lbs'])
-    mapDeps(project.ext.TencentMapDeps['tencent-map-vector-sdk'])
-    mapDeps(project.ext.TencentMapDeps['sdk-utilities'])
-    mapDeps(project.ext.TencentMapDeps['TencentLocationSdk-openplatform'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_map']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_lbs']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    mapDeps(project.ext.TencentMapDeps['tencent-map-vector-sdk']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    mapDeps(project.ext.TencentMapDeps['sdk-utilities']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    mapDeps(project.ext.TencentMapDeps['TencentLocationSdk-openplatform']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
 
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_google_map'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_huawei_map'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_google_map']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_huawei_map']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
 //    tcmppDeps(project.ext.TCMPPDeps['mini_extra_trtc_live'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_nfc'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_bluetooth'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_contact'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_soter'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_clipboard'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_calendar'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_wifi'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_media_support_lite'])
-    tcmppDeps(project.ext.TCMPPDeps['mini_extra_mbengine'])
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_nfc']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_bluetooth']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_contact']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_soter']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_clipboard']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_calendar']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_wifi']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_media_support_lite']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
+    tcmppDeps(project.ext.TCMPPDeps['mini_extra_mbengine']){
+        exclude(group: "androidx.appcompat")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
+    }
 //    tcmppDeps(project.ext.TCMPPDeps['mini_extra_v8'])
 //    tcmppDeps(project.ext.TCMPPDeps['mini_extra_lamemp3'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_network']) {
         exclude(group: "org.jetbrains.kotlin")
+        exclude(group: "com.tencent.tcmpp.android",module:"mini_core")
     }
 
 //    //calendar support

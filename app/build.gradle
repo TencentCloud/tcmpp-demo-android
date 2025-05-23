@@ -12,6 +12,12 @@ if (rootProject.ext.useOfflineSdks){
     apply from: '../offline_sdks/downloadDeps.gradle'
 }
 
+configurations.all {
+    resolutionStrategy {
+        force project.ext.TCMPPDeps['mini_core']
+    }
+}
+
 android {
     namespace 'com.tencent.tcmpp.demo'
     compileSdk 33
@@ -132,6 +138,7 @@ dependencies {
     } else {
         // mini app start
         implementation project.ext.TCMPPDeps['mini_core']
+        implementation project.ext.TCMPPDeps['mini_baselib']
 
         // qrcode support
         implementation project.ext.TCMPPDeps['mini_extra_qrcode']

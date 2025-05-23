@@ -6,6 +6,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+import com.tencent.tcmpp.demo.TCMPPDemoApplication;
 import com.tencent.tcmpp.demo.ipcplugin.SaveUserIPC;
 import com.tencent.tcmpp.demo.sp.BaseSp;
 import com.tencent.tmf.base.api.config.ITMFConfigManager;
@@ -50,7 +51,7 @@ public class Login extends BaseSp {
         mUserInfo = userInfo;
         if (AppLoaderFactory.g().isMainProcess()) {
             putString(mEditor, "userInfo", GsonUtils.toJson(userInfo));
-        }else{
+        } else {
             SaveUserIPC.saveUserInfo(userInfo);
         }
     }
@@ -82,8 +83,10 @@ public class Login extends BaseSp {
         }
     }
 
-    private String getEnvAppId(){
-        TmfMiniSDK.getDebugInfo();
+    private String getEnvAppId() {
+        if (!TmfMiniSDK.isMiniProcess(TCMPPDemoApplication.sApp)) {
+            TmfMiniSDK.getDebugInfo();
+        }
         ITMFConfigManager itmfConfigManager = TMFServiceManager.getDefaultServiceManager().getService(ITMFConfigManager.class);
         return itmfConfigManager.getAppKey();
     }

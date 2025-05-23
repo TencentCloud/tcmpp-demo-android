@@ -1,6 +1,7 @@
 ext {
     TCMPPDeps = [
             'mini_core'                : "com.tencent.tcmpp.android:mini_core:latest.release",
+            'mini_baselib'                : "com.tencent.tcmpp.android:mini_baselib:latest.release",
             'mini_annotation_processor': "com.tencent.tcmpp.android:mini_annotation_processor:latest.release",
             'mini_extra_qrcode'        : "com.tencent.tcmpp.android:mini_extra_qrcode:latest.release",
             'mini_extra_map'           : "com.tencent.tcmpp.android:mini_extra_map:latest.release",

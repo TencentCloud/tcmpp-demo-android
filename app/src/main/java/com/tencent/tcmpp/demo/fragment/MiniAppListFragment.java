@@ -18,12 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.tencent.tcmpp.demo.R;
 import com.tencent.tcmpp.demo.bean.ItemBean;
 import com.tencent.tcmpp.demo.ui.MiniAppItemDecoration;
-import com.tencent.tcmpp.demo.utils.FileUtil;
 import com.tencent.tcmpp.demo.utils.GlobalConfigureUtil;
 import com.tencent.tcmpp.demo.utils.MiniAppCategoryHelper;
 import com.tencent.tmf.mini.api.TmfMiniSDK;
@@ -34,8 +31,6 @@ import com.tencent.tmf.mini.api.bean.MiniStartOptions;
 import com.tencent.tmf.mini.api.bean.SearchOptions;
 import com.tencent.tmfmini.sdk.core.utils.GsonUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +40,6 @@ public class MiniAppListFragment extends Fragment {
     public static String TYPE_MY = "my";
     private String type;
 
-    private List<ItemBean> mExampleList;
     private List<ItemBean> mItemList = new ArrayList<>();
     private MiniAppRecyclerViewAdapter miniAppRecyclerViewAdapter;
     private final ResultReceiver mResultReceiver = new ResultReceiver(new Handler()) {
@@ -110,10 +104,6 @@ public class MiniAppListFragment extends Fragment {
         if (TYPE_RECENT.equals(type)) {
             loadRecentList();
         } else if (TYPE_MY.equals(type)) {
-            mExampleList = loadExampleList();
-            if (!mExampleList.isEmpty()) {
-                mItemList.addAll(mExampleList);
-            }
             loadAllMiniAppList();
         }
     }
@@ -132,29 +122,10 @@ public class MiniAppListFragment extends Fragment {
 
     }
 
-    private List<ItemBean> loadExampleList() {
-        List<ItemBean> result = new ArrayList<>();
-        try {
-            InputStream in = getActivity().getAssets().open("default_mini_apps.json");
-            String exJson = FileUtil.readFileContent(in);
-            List<MiniApp> examples = new Gson().fromJson(exJson, new TypeToken<List<MiniApp>>() {
-            }.getType());
-            for (MiniApp miniApp : examples) {
-                result.add(new ItemBean(ItemBean.ITEM_TYPE_VERT, miniApp.name, miniApp));
-            }
-        } catch (IOException ignored) {
-
-        }
-        return result;
-    }
-
     private void loadAllMiniAppList() {
         SearchOptions searchOptions = new SearchOptions("");
         TmfMiniSDK.searchMiniApp(searchOptions, (code, msg, data) -> {
             List<ItemBean> list = new ArrayList<>();
-            if (!mExampleList.isEmpty()) {
-                list.addAll(mExampleList);
-            }
             if (code == MiniCode.CODE_OK && data != null) {
                 for (MiniApp app : data) {
                     list.add(new ItemBean(0, app.name, app));

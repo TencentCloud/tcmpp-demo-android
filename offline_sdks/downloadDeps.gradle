@@ -12,7 +12,7 @@ dependencies {
         exclude(group: "androidx.core")
         exclude(group: "org.jetbrains.kotlin")
     }
-
+    tcmppDeps(project.ext.TCMPPDeps['mini_baselib'])
 //    tcmppDeps(project.ext.TCMPPDeps['mini_extra_dynamic_x5'])
 //    tcmppDeps(project.ext.TCMPPDeps['dynamicx5'])
     tcmppDeps(project.ext.TCMPPDeps['mini_extra_qrcode']) {

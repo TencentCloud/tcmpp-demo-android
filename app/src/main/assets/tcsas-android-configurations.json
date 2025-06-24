@@ -1,0 +1,17 @@
+{
+  "customId": "T07724IR9831729JNKI",
+  "productId": "100865984",
+  "packageName": "com.tcsas.open.demo",
+  "bundleId": "",
+  "material": "01evRgVBLxBvU9MZYcj3xkbRxWwDJ64UBgWwY9RTGZ0KDYbpKUtVHkbKUMUOyg45pePbDtCp6ODpsQpLq8LK89hGw9u/HL1sQY/kLXdZHh1DOxbq/tcAheT3g+FauNqzBHOkUOEQt7pwiE3hZG7bIgS6ASdLLgURTdI3xGINdFzgVofdSG9XCjvODxaAa875p9ezTyk+qBsUDyxJZtn6JfuWm9YhZN3x1AQv14i/z/5VV+54b9H02gon6WQoHv+TxQahRO8iKurPYETahQHL/8sQWeBeiUDb3B/HIA1YL0Xbsr4EVdj5nPDpeRvpKpwzQAsLUKasgeGLAYEa/IXpzwLVlsyfyoerGxQSZUZqBvqq5eHNE2Oom095womv69V0pSJ6HQVww+RXC5mHF+weh7Lrl7l8+duHfmTlqGuR/0RW750KSETSAgSgSJZmKbmyA8POK8/gdtTKH/3UhSTd8BA1Jcb3h20tJwUwGEifjbD0CMbeLffv7/nuoX90kD+VMlzMvSPSiluw7K78zAguAQPkHB+fue4Smpve6P443rUZEMdpee68MS0vUp+bOMvvaOhRARYC5xNXHhpvMExLBbHg==16b5139b8ca335f1",
+  "shark": {
+    "httpUrl": "https://api-sg.tcmpp.com/",
+    "tcpHost": "MAZUTCPDOMAN",
+    "tcpPort": 0,
+    "appKey": "app-h9oobszbcp",
+    "symEnc": 1,
+    "asymEnc": 0
+  },
+  "feedback": "https://feedback-sg.tcmpp.com?region=ap-singapore&env=prod",
+  "qapmUrl": "https://qapm-app-sg.tcmpp.com"
+}

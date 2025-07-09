@@ -110,12 +110,12 @@ public class MiniAppListFragment extends Fragment {
 
     private void loadRecentList() {
         TmfMiniSDK.getRecentList(recentList -> {
-            if (!recentList.isEmpty()) {
+            if (recentList != null && !recentList.isEmpty()) {
                 for (MiniApp app : recentList) {
                     mItemList.add(new ItemBean(0, app.name, app));
                 }
+                Log.e(TAG, "miniLit recent " + GsonUtils.toJson(recentList));
             }
-            Log.e(TAG, "miniLit recent " + GsonUtils.toJson(recentList));
 
             miniAppRecyclerViewAdapter.notifyDataSetChanged();
         });

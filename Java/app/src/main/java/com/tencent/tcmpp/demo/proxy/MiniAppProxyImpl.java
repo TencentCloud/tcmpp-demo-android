@@ -1,0 +1,170 @@
+package com.tencent.tcmpp.demo.proxy;
+
+import android.content.Context;
+import android.content.DialogInterface.OnClickListener;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+
+import com.tencent.tcmpp.demo.BuildConfig;
+import com.tencent.tcmpp.demo.Constants;
+import com.tencent.tcmpp.demo.TCMPPDemoApplication;
+import com.tencent.tcmpp.demo.open.login.Login;
+import com.tencent.tcmpp.demo.open.login.LoginApi;
+import com.tencent.tcmpp.demo.utils.LocalUtil;
+import com.tencent.tcmpp.demo.utils.UniversalDrawable;
+import com.tencent.tmf.mini.api.bean.MiniConfigData;
+import com.tencent.tmfmini.sdk.annotation.ProxyService;
+import com.tencent.tmfmini.sdk.launcher.core.IMiniAppContext;
+import com.tencent.tmfmini.sdk.launcher.core.proxy.AsyncResult;
+import com.tencent.tmfmini.sdk.launcher.core.proxy.BaseMiniAppProxyImpl;
+import com.tencent.tmfmini.sdk.launcher.core.proxy.MiniAppProxy;
+import com.tencent.tmfmini.sdk.launcher.ui.OnMoreItemSelectedListener;
+import com.tencent.tmfmini.sdk.ui.DefaultMoreItemSelectedListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+@ProxyService(proxy = MiniAppProxy.class)
+public class MiniAppProxyImpl extends BaseMiniAppProxyImpl {
+
+    @Override
+    public void getUserInfo(String s, AsyncResult asyncResult) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("nickName", Constants.USER_INFO_NAME);
+            jsonObject.put("avatarUrl", Constants.USER_INFO_AVATAR_URL);
+            asyncResult.onReceiveResult(true, jsonObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public String getAppVersion() {
+        return "1.0.0";
+    }
+
+    @Override
+    public String getAppName() {
+        return "TCMPPDemo";
+    }
+
+    @Override
+    public boolean isDebugVersion() {
+        return BuildConfig.DEBUG;
+    }
+
+    @Override
+    public Drawable getDrawable(Context context, String source, int width, int height, Drawable defaultDrawable) {
+        UniversalDrawable drawable = new UniversalDrawable();
+        if (TextUtils.isEmpty(source)) {
+            return drawable;
+        }
+        drawable.loadImage(context, source);
+        return drawable;
+    }
+
+    @Override
+    public boolean openChoosePhotoActivity(Context context, int i, IChoosePhotoListner iChoosePhotoListner) {
+        return false;
+    }
+
+    @Override
+    public boolean openImagePreview(Context context, int i, List<String> list) {
+        return false;
+    }
+
+    @Override
+    public boolean onCapsuleButtonMoreClick(IMiniAppContext iMiniAppContext) {
+        return false;
+    }
+
+    @Override
+    public boolean onCapsuleButtonCloseClick(IMiniAppContext iMiniAppContext, OnClickListener onClickListener) {
+        return false;
+    }
+
+    @Override
+    public Map<String, Integer> getCustomShare() {
+        return null;
+    }
+
+    @Override
+    public boolean uploadUserLog(String s, String s1) {
+        return false;
+    }
+
+    @Override
+    public MiniConfigData configData(Context context, int configType, JSONObject params) {
+        if(configType == MiniConfigData.TYPE_CUSTOM_JSAPI) {
+            // Custom JsApi configuration
+            MiniConfigData.CustomJsApiConfig customJsApiConfig = new MiniConfigData.CustomJsApiConfig();
+            customJsApiConfig.jsApiConfigPath = "tcmpp/custom-config.json";
+
+            return new MiniConfigData
+                    .Builder()
+                    .customJsApiConfig(customJsApiConfig)
+                    .build();
+        }
+
+        if(configType == MiniConfigData.TYPE_LIVE) {
+            // Live broadcast configuration
+            MiniConfigData.LiveConfig liveConfig = new MiniConfigData.LiveConfig();
+            // The following key and url can only be used for demo
+            liveConfig.licenseKey = "6ae463dfe484853eef22052ca122623b";
+            liveConfig.licenseUrl = "https://license.vod2.myqcloud.com/license/v2/1314481471_1/v_cube.license";
+
+            return new MiniConfigData
+                    .Builder()
+                    .liveConfig(liveConfig)
+                    .build();
+        }
+
+//        if(configType == MiniConfigData.TYPE_DOMAIN) {
+//            // Virtual domain configuration
+//            MiniConfigData.DomainConfig domainConfig = new MiniConfigData.DomainConfig();
+//            domainConfig.domain = "test.com";
+//
+//            return new MiniConfigData
+//                    .Builder()
+//                    .domainConfig(domainConfig)
+//                    .build();
+//        }
+
+        if(configType == MiniConfigData.TYPE_WEBVIEW) {
+            String ua = params.optString(MiniConfigData.WebViewConfig.WEBVIEW_CONFIG_UA);
+            // Set new userAgent
+            MiniConfigData.WebViewConfig webViewConfig = new MiniConfigData.WebViewConfig();
+            webViewConfig.userAgent = "UATest";
+
+            return new MiniConfigData
+                    .Builder()
+                    .webViewConfig(webViewConfig)
+                    .build();
+        }
+
+        return new MiniConfigData
+                .Builder()
+                .build();
+    }
+
+    @Override
+    public OnMoreItemSelectedListener getMoreItemSelectedListener() {
+        return new DefaultMoreItemSelectedListener();
+    }
+
+    @Override
+    public Locale getLocale() {
+        return LocalUtil.current();
+    }
+
+    @Override
+    public String getAccount() {
+        LoginApi.UserInfo userInfo = Login.g(TCMPPDemoApplication.sApp).getUserInfo();
+        return userInfo != null ? userInfo.userId : "unknown";
+    }
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/pay_method_account_format"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/applet_pay_type"
+        android:textColor="@color/read_dot_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/pay_method_account"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/pay_method_account"
+        app:layout_constraintTop_toTopOf="@id/pay_method_account" />
+
+    <TextView
+        android:id="@+id/pay_method_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/app_name"
+        android:textColor="@color/read_dot_bg"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@+id/pay_method_account_format"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pay_method_account_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tcmpp_payment_type"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_method_account" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_method_account_info">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pay_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_pay_method_confirm"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/white"
+        android:background="@drawable/pay_button_background"
+        android:layout_marginBottom="16dp"
+        android:text="@string/tcmpp_payment_confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="MyAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert" />
+
+    <declare-styleable name="RoundImageView">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <style name="applet_edittext_border">
+        <item name="android:background">@drawable/applet_edittext_border</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">45dp</item>
+        <item name="android:maxHeight">150dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">17sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+</resources>

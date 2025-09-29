@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TCMPPDemo" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+    
+    <!-- Android 15: 边到边显示主题 -->
+    <style name="Theme.TCMPPDemo.EdgeToEdge" parent="Theme.TCMPPDemo">
+        <!-- 启用边到边显示 -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="p">always</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">false</item>
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
+        <!-- Android 15: 强制边到边显示 -->
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
+    </style>
+    
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/applet_tab_selected_indicator_color</item>
+        <item name="tabTextColor">@color/applet_tab_unselected_text_color</item>
+        <item name="tabSelectedTextColor">@color/applet_tab_selected_text_color</item>
+        <item name="tabIndicator">@drawable/tab_indicator</item>
+    </style>
+</resources>

@@ -1,0 +1,55 @@
+package com.tencent.tcmpp.demo
+
+import android.app.Application
+import android.content.Context
+import android.graphics.BitmapFactory
+import android.os.Build
+import android.os.StrictMode
+import com.tencent.tcmpp.demo.bean.GlobalConfigure
+import com.tencent.tcmpp.demo.utils.GlideUtil
+import com.tencent.tcmpp.demo.utils.GlobalConfigureUtil
+
+class TCMPPDemoApplication : Application() {
+    
+    companion object {
+        var sApp: Application? = null
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+        sApp = this
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            StrictMode.setVmPolicy(
+                StrictMode.VmPolicy.Builder()
+                    .detectUnsafeIntentLaunch()
+                    .penaltyLog()
+                    .build()
+            )
+        }
+        
+        GlideUtil.init(this)
+        configureApp()
+    }
+
+    /**
+     * config your app main page here
+     */
+    private fun configureApp() {
+        // custom app config with your own UI infos
+        val bitmap = BitmapFactory.decodeResource(resources, R.mipmap.applet_ic_tcmpp_login)
+        val customConfig = GlobalConfigure.Builder()
+            .appName(getString(R.string.applet_login_title)) // main page app name
+            .icon(bitmap) // bitmap for main page icon
+            .description(getString(R.string.applet_login_title_desc)) // main page description
+            .mainTitle(getString(R.string.applet_main_title)) // main page title
+            .mockApi(false) // once set true, it will use local mock login and payment data, otherwise online
+            .build()
+        // once set custom config, app will use custom config instead of default ones
+        GlobalConfigureUtil.setCustomConfig(customConfig)
+    }
+}

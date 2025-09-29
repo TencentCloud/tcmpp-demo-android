@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Android 15: 禁用 TLS 1.0 和 1.1，仅允许 TLS 1.2+ -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+    
+    <!-- 开发环境配置（如需要） -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system"/>
+            <certificates src="user"/>
+        </trust-anchors>
+    </debug-overrides>
+    
+    <!-- 域名特定配置 -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.weixin.qq.com</domain>
+        <domain includeSubdomains="true">mp.weixin.qq.com</domain>
+        <domain includeSubdomains="true">tcmpp.qq.com</domain>
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </domain-config>
+</network-security-config>

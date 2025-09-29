@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_bind_card_submit"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_bind_card_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_bind_card_tip"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/demo_payment_card"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_bind_card_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/tcmpp_payment_add_one_card"
+                        android:textColor="@color/text_color_black"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_bind_card_tip"
+                        app:layout_constraintLeft_toRightOf="@id/iv_bind_card_tip"
+                        app:layout_constraintTop_toTopOf="@id/iv_bind_card_tip" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_bind_card_tips">
+
+                        <ImageView
+                            android:id="@+id/iv_bind_card_type_visa"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="8dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pay_method_visa" />
+
+                        <ImageView
+                            android:id="@+id/iv_bind_card_type_bri"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pay_method_bri" />
+
+                        <ImageView
+                            android:id="@+id/iv_bind_card_type_dbs"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="8dp"
+                            android:scaleType="center"
+                            android:src="@drawable/pay_method_dbs" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_bind_card_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/tv_bind_card_tips"
+                        app:layout_goneMarginEnd="16dp"
+                        app:layout_goneMarginStart="16dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_bind_card_card_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_bind_card_type">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_bind_card_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/edit_text_border"
+                        android:hint="@string/tcmpp_payment_add_card_num"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/et_bind_card_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/edit_text_border"
+                        android:hint="@string/tcmpp_payment_add_card_user"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/et_bind_card_expire_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/edit_text_border"
+                        android:hint="@string/tcmpp_payment_add_card_time"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/et_bind_card_cvv"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="48dp"
+                        android:background="@drawable/edit_text_border"
+                        android:hint="@string/tcmpp_payment_add_card_ccv"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/iv_bind_card_warning"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/demo_payment_bind_info"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_bind_card_card_info" />
+
+            <TextView
+                android:id="@+id/tv_bind_warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/tcmpp_payment_add_card_safe_tip"
+                app:layout_constraintLeft_toRightOf="@+id/iv_bind_card_warning"
+                app:layout_constraintTop_toBottomOf="@+id/cv_bind_card_card_info" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/iv_bind_card_submit"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/demo_payment_safeguard"
+        android:text="@string/tcmpp_payment_add_card_safe_tip"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_bind_submit_info"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_bind_submit_info"
+        app:layout_constraintTop_toTopOf="@+id/tv_bind_submit_info" />
+
+    <TextView
+        android:id="@+id/tv_bind_submit_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/tcmpp_payment_add_card_safe_tips_2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bind_submit_info"
+        app:layout_constraintLeft_toRightOf="@id/iv_bind_card_submit"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_bind_submit_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/pay_button_background"
+        android:text="@string/tcmpp_payment_add_card_safe_confirm"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

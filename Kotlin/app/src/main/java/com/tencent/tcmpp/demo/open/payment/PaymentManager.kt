@@ -11,10 +11,9 @@ import com.tencent.tcmpp.demo.R
 import com.tencent.tcmpp.demo.activity.PaymentResultActivity
 import com.tencent.tcmpp.demo.open.login.Login
 import com.tencent.tcmpp.demo.utils.GlobalConfigureUtil
-import com.tencent.tmf.base.api.config.ITMFConfigManager
-import com.tencent.tmf.core.api.TMFServiceManager
 import com.tencent.tmfmini.sdk.launcher.core.IMiniAppContext
 import com.tencent.tmfmini.sdk.launcher.core.proxy.AsyncResult
+import com.tencent.tmfmini.sdk.tmf.SharkUtils
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -166,8 +165,7 @@ class PaymentManager private constructor() {
 
         try {
             params.put("token", userInfo.token)
-            val itmfConfigManager = TMFServiceManager.getDefaultServiceManager().getService(ITMFConfigManager::class.java)
-            val appKey = itmfConfigManager.appKey
+            val appKey = SharkUtils.getAppKey()
             params.put("appId", appKey)
             Log.e("TAG", "put token for game ${userInfo.token}")
         } catch (ignored: JSONException) {

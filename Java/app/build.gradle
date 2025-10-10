@@ -6,10 +6,10 @@ plugins {
     id "org.jetbrains.kotlin.kapt" version "1.9.20"
 }
 
-apply from: '../deps.gradle'
+apply from: "${project.rootDir}/../deps.gradle"
 
 if (rootProject.ext.useOfflineSdks){
-    apply from: '../offline_sdks/downloadDeps.gradle'
+    apply from: "${project.rootDir}/../offline_sdks/downloadDeps.gradle"
 }
 
 configurations.all {
@@ -167,8 +167,8 @@ dependencies {
     kapt project.ext.TCMPPDeps['mini_annotation_processor']
 
     if (rootProject.ext.useOfflineSdks) {
-        implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/offline_sdks/tcmpp-mini-core")
-        implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/offline_sdks/tcmpp-tencent-map")
+        implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/../offline_sdks/tcmpp-mini-core")
+        implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/../offline_sdks/tcmpp-tencent-map")
         implementation "androidx.webkit:webkit:1.5.0"
     } else {
         // mini app start

@@ -9,12 +9,11 @@ import com.google.gson.Gson;
 import com.tencent.tcmpp.demo.TCMPPDemoApplication;
 import com.tencent.tcmpp.demo.ipcplugin.SaveUserIPC;
 import com.tencent.tcmpp.demo.sp.BaseSp;
-import com.tencent.tmf.base.api.config.ITMFConfigManager;
-import com.tencent.tmf.core.api.TMFServiceManager;
 import com.tencent.tmf.mini.api.TmfMiniSDK;
 import com.tencent.tmf.mini.api.callback.MiniCallback;
 import com.tencent.tmfmini.sdk.core.utils.GsonUtils;
 import com.tencent.tmfmini.sdk.launcher.AppLoaderFactory;
+import com.tencent.tmfmini.sdk.tmf.SharkUtils;
 
 public class Login extends BaseSp {
 
@@ -87,7 +86,6 @@ public class Login extends BaseSp {
         if (!TmfMiniSDK.isMiniProcess(TCMPPDemoApplication.sApp)) {
             TmfMiniSDK.getDebugInfo();
         }
-        ITMFConfigManager itmfConfigManager = TMFServiceManager.getDefaultServiceManager().getService(ITMFConfigManager.class);
-        return itmfConfigManager.getAppKey();
+        return SharkUtils.getAppKey();
     }
 }

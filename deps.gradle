@@ -28,8 +28,8 @@ ext {
     ]
 
     TencentMapDeps = [
-            'tencent-map-vector-sdk'         : "com.tencent.map:tencent-map-vector-sdk:4.5.10",
-            'sdk-utilities'                  : "com.tencent.map:sdk-utilities:1.0.7",
-            'TencentLocationSdk-openplatform': "com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.4.9"
+            'tencent-map-vector-sdk'         : "com.tencent.map:tencent-map-vector-sdk:5.9.0",
+            'sdk-utilities'                  : "com.tencent.map:sdk-utilities:1.0.9",
+            'TencentLocationSdk-openplatform': "com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.6.1.3"
     ]
 }

@@ -136,6 +136,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".activity.MainTaskStackActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TCMPPDemo.EdgeToEdge" />
+
     </application>
 
 </manifest>

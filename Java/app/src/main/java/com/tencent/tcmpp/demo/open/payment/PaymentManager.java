@@ -24,6 +24,7 @@ public class PaymentManager {
     private static PaymentManager instance;
     private final PayApi payApi = new PayApi();
     private PaymentRequest paymentRequest;
+    private CustomPayDemo.CustomPayDialog mCustomPayDialog;
 
     public static PaymentManager g() {
         if (instance == null) {
@@ -92,6 +93,7 @@ public class PaymentManager {
                         } catch (JSONException ignored) {
                         }
                         result.onReceiveResult(false, ret);
+                        dismissPwdDialog();
                         activity.finish();
                     }
                     paymentRequest = null;
@@ -128,7 +130,7 @@ public class PaymentManager {
         });
     }
 
-    private void gotoPayPage(Activity activity, IMiniAppContext miniAppContext, JSONObject checkRet, AsyncResult result) {
+    public void gotoPayPage(Activity activity, IMiniAppContext miniAppContext, JSONObject checkRet, AsyncResult result) {
         activity.runOnUiThread(() -> {
             String fee = checkRet.optString("actualAmount");
             double paymentValue = Double.parseDouble(fee) / 10000;
@@ -168,9 +170,16 @@ public class PaymentManager {
      * @param money
      */
     private void showPwdDialog(Activity activity, double money, ICustomPayCallback payCallback, int iconSrc, String desc) {
-        CustomPayDemo.CustomPayDialog customPayDialog = new CustomPayDemo.CustomPayDialog(activity, money, R.style.MyAlertDialog, iconSrc, desc);
-        customPayDialog.addPayResultListen(payCallback);
-        customPayDialog.show();
+        mCustomPayDialog = new CustomPayDemo.CustomPayDialog(activity, money, R.style.MyAlertDialog, iconSrc, desc);
+        mCustomPayDialog.addPayResultListen(payCallback);
+        mCustomPayDialog.show();
+    }
+
+    private void dismissPwdDialog() {
+        if (null != mCustomPayDialog) {
+            mCustomPayDialog.dismiss();
+            mCustomPayDialog = null;
+        }
     }
 
     /**
@@ -183,7 +192,7 @@ public class PaymentManager {
      */
     private void checkPwdAndPay(Activity activity, String pwd, JSONObject data, AsyncResult result, String payModel, String payModelId) {
         if (checkPassWord(pwd)) {
-            if (isMock(activity)) {//mock payment
+            if (isMock(activity) || data.optBoolean("isMock")) {//mock payment
                 requestPaymentByMock(activity, data, result);
             } else {//real payment
                 requestPayment(activity, data, result, payModel, payModelId);
@@ -195,6 +204,7 @@ public class PaymentManager {
             } catch (JSONException ignored) {
             }
             result.onReceiveResult(false, ret);
+            dismissPwdDialog();
             activity.finish();
         }
     }
@@ -235,6 +245,7 @@ public class PaymentManager {
                 } catch (JSONException ignored) {
                 }
                 asyncResult.onReceiveResult(false, ret);
+                dismissPwdDialog();
                 activity.finish();
 
             }
@@ -261,7 +272,7 @@ public class PaymentManager {
     private void requestPaymentByMock(Activity activity, JSONObject data, AsyncResult asyncResult) {
         String totalFee = data.optString("total_fee");
         showPayResult(true, activity, totalFee);
-        asyncResult.onReceiveResult(true, new JSONObject());
+        asyncResult.onReceiveResult(true, data);
     }
 
     private boolean isMock(Context context) {
@@ -273,6 +284,7 @@ public class PaymentManager {
         intent.setAction(Intent.ACTION_VIEW);
         intent.putExtra("success", success);
         intent.putExtra("total", total);
+        dismissPwdDialog();
         activity.startActivity(intent);
         activity.finish();
     }

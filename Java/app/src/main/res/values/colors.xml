@@ -22,6 +22,8 @@
     <color name="applet_mini_operate_bg">#F7F7F7</color>
     <color name="applet_pay_success_green">#57BE6A</color>
     <color name="applet_pay_btn_color">#CCF2F2F2</color>
+    <color name="btn_agree_green">#00DAA2</color>>
+    <color name="btn_refuse_color">#828282</color>
 
     <color name="text_color_black">#000</color>
     <color name="read_dot_bg">#f74c31</color>
